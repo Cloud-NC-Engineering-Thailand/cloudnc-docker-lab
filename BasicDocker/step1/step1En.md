@@ -14,6 +14,7 @@
 3. Build `Image` named `my-ping` that can execute `ping google.com` when we start the image
 4. Build `container` named `ping-container` from `Image` named `my-ping`
 
+<detail>
 
 # HINT
 
@@ -27,8 +28,9 @@ All neccessary command in this lab
 3. `docker build -t (image name) .` - Use to build a docker image
 4. `docker image ls` - Use to call all the image that exist on machine
 5. `docker run --name (container name) (image name)` - Use to create a container from image
+</detail>
 
-
+<detail>
 
 # Solution
 
@@ -54,9 +56,11 @@ To exit the nano editor on Windows:
 docker build -t my-ping .
 
 docker image ls
-```
+```{{exec}}
 
 5. Build container from DockerImage by running this following command
 ```plain
 docker run --name ping-container my-ping
-```
+```{{exec}}
+
+</detail>

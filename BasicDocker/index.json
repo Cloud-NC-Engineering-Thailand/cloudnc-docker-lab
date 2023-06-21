@@ -7,13 +7,14 @@
     },
     "steps": [
         {
-        "text": "step1En.md"
+            "title": "Build a container from scratch",
+            "text": "step1En.md",
+            "verify": "step1/verify.sh"
         },
         {
-        "text": "step2.md"
-        },
-        {
-        "text": "step3.md"
+            "title": "Push image with custom tag to registry",
+            "text": "step2En.md",
+            "verify": "step2/verify.sh"
         }
     ]
     },
