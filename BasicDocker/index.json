@@ -8,12 +8,12 @@
     "steps": [
         {
             "title": "Build a container from scratch",
-            "text": "step1En.md",
+            "text": "step1/step1En.md",
             "verify": "step1/verify.sh"
         },
         {
             "title": "Push image with custom tag to registry",
-            "text": "step2En.md",
+            "text": "step2/step2En.md",
             "verify": "step2/verify.sh"
         }
     ]
