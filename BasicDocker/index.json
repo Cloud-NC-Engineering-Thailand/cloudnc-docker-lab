@@ -1,9 +1,9 @@
 {
     "title": "Basic Docker",
-    "description": "เรียนรู้พื้นฐาน Docker แบบง่ายๆ",
+    "description": "Learning Docker by example",
     "details": {
     "intro": {
-        "text": "กดปุุ่ม Start เพื่อเริ่มเรียนรู้"
+        "text": "intro.md"
     },
     "steps": [
         {
