@@ -1,17 +1,21 @@
 {
-    "title": "Code Actions",
-    "description": "Let users copy or exec code blocks",
+    "title": "Basic Docker",
+    "description": "เรียนรู้พื้นฐาน Docker แบบง่ายๆ",
     "details": {
-    "intro": {
-        "text": "intro.md"
-    },
+
     "steps": [
         {
-        "text": "step1.md"
+            "text": "step1.md"
+        },
+        {
+            "text": "step2.md"
+        },
+        {
+            "text": "step3.md"
         }
     ]
     },
     "backend": {
-    "imageid": "ubuntu"
+        "imageid": "ubuntu"
     }
 }
