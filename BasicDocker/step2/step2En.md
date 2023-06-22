@@ -12,7 +12,7 @@
 
 <detail>
 
-# HINT
+<summary>Hint</summary>
 
 All neccessary command in this lab
 
@@ -24,7 +24,7 @@ All neccessary command in this lab
 
 <detail>
 
-# Solution
+<summary>Solution</summary>
 
 ```plain
 docker tag my-ping local-registry:5000/my-ping:1.0.1

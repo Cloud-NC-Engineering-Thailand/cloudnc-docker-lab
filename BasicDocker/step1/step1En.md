@@ -16,7 +16,7 @@
 
 <detail>
 
-# HINT
+<summary>Hint</summary>
 
 
 All neccessary command in this lab
@@ -30,9 +30,9 @@ All neccessary command in this lab
 5. `docker run --name (container name) (image name)` - Use to create a container from image
 </detail>
 
-<detail>
+<details>
+<summary>Solution</summary>
 
-# Solution
 
 1. `touch Dockerfile`
 
