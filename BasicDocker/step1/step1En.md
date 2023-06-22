@@ -45,13 +45,14 @@ CMD ["ping", "google.com"]
 
 To exit the nano editor on Windows:
 
-1. ctrl+x
+    1. ctrl+x
 
-2. ctrl+y to save
+    2. ctrl+y to save
 
-3. press enter
+    3. press enter
 
 4. Build DockerImage by running this following command 
+
 ```plain
 docker build -t my-ping .
 
