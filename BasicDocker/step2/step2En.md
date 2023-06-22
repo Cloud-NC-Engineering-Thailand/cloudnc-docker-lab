@@ -23,7 +23,6 @@ All neccessary command in this lab
 </detail>
 
 <detail>
-
 <summary>Solution</summary>
 
 ```plain

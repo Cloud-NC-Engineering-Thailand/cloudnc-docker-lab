@@ -15,12 +15,9 @@
 4. Build `container` named `ping-container` from `Image` named `my-ping`
 
 <detail>
-
 <summary>Hint</summary>
 
-
 All neccessary command in this lab
-
 
 1. `touch (filename)` - Use to create a file
 
@@ -30,6 +27,7 @@ All neccessary command in this lab
 5. `docker run --name (container name) (image name)` - Use to create a container from image
 </detail>
 
+
 <details>
 <summary>Solution</summary>
 
@@ -38,6 +36,7 @@ All neccessary command in this lab
 
 2. `nano Dockerfile`
 3. Call a Bash from Dockerhub and execute ping google.com
+
 ```plain
 FROM bash
 CMD ["ping", "google.com"]
@@ -51,7 +50,7 @@ To exit the nano editor on Windows:
 
     3. press enter
 
-4. Build DockerImage by running this following command 
+Build DockerImage by running this following command 
 
 ```plain
 docker build -t my-ping .
@@ -59,7 +58,7 @@ docker build -t my-ping .
 docker image ls
 ```{{exec}}
 
-5. Build container from DockerImage by running this following command
+Build container from DockerImage by running this following command
 ```plain
 docker run --name ping-container my-ping
 ```{{exec}}

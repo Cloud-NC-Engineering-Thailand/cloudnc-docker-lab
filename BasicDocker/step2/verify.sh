@@ -8,7 +8,7 @@ set -e # exit once any command fails
 
     docker image ls | grep local-registry:5000/my-ping | grep 1.0.1
 
-    curl http://local-registry:5000/my-ping/tags/list -k | grep my-ping | grep 1.0.1
+    curl http://local-registry:5000/v2/my-ping/tags/list -k | grep my-ping | grep 1.0.1
 
     rm /tmp/curl || true
 

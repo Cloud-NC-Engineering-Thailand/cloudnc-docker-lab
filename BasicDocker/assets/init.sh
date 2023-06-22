@@ -23,7 +23,7 @@ echo '172.30.1.2 local-registry' >> /etc/hosts
 cat >> /etc/containers/registries.conf <<EOF
 [[registry]]
 location="local-registry:5000"
-insecure=true
+insecure=true 
 EOF
 
 cp /etc/docker/daemon.json /etc/docker/daemon.json.tmp
