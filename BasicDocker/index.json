@@ -3,7 +3,9 @@
     "description": "Learning Docker by example",
     "details": {
     "intro": {
-        "text": "intro.md"
+        "text": "intro.md",
+        "background": "init/background.sh",
+        "foreground": "init/foreground.sh"
     },
     "steps": [
         {
