@@ -36,10 +36,8 @@ All neccessary Dockerfile syntax
 5. `CMD ["(command line)"]` - Defines the default command to run when the container starts.
 6. `ENV NODE_ENV production` - Use to tell the node that our environment variable will be on porduction mode
 7. 
-    ```plain
-    `ARG NODEJSPORT`
-    `ENV NODEJSPORT $NODEJSPORT`
-    ```
+`ARG NODEJSPORT`
+`ENV NODEJSPORT $NODEJSPORT`
 ARG (env name) - Use for recieving the value of the environment variable on the cli command
 ENV (env name) (env value) - Use to set the environment variable name and value in the container
 </details>
