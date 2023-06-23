@@ -10,16 +10,16 @@
         "steps": [
             {
                 "title": "Running with nodejs",
-                "text": "step1/security1.md",
+                "text": "step1/security1.md"
             },
             {
                 "title": "Environment variable with Dockerfile",
-                "text": "step2/security2.md",
+                "text": "step2/security2.md"
             },
             {
                 "title": "Add non root user",
-                "text": "step3/security3.md",
-            },
+                "text": "step3/security3.md"
+            }
         ],
         "assets": {
             "host01": [
