@@ -56,7 +56,7 @@ EOF
 cat index.js
 
 cat > Dockerfile <<EOF
-FROM node:slim
+FROM node:alpine
 
 RUN useradd -u 3333 foo
 

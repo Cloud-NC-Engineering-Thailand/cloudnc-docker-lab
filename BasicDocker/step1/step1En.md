@@ -25,6 +25,12 @@ All neccessary command in this lab
 3. `docker build -t (image name) .` - Use to build a docker image
 4. `docker image ls` - Use to call all the image that exist on machine
 5. `docker run --name (container name) (image name)` - Use to create a container from image
+
+
+All neccessary Dockerfile syntax
+1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
+2. `CMD ["(command line)"]` - Defines the default command to run when the container starts.
+
 </details>
 
 

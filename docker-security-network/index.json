@@ -9,6 +9,11 @@
         },
         "steps": [
             {
+                "title": "Why choose we use alpine instead of other",
+                "text": "step0/security0.md",
+                "verify": "step0/verify.sh"
+            },
+            {
                 "title": "Running with nodejs",
                 "text": "step1/security1.md",
                 "verify": "step1/verify.sh"

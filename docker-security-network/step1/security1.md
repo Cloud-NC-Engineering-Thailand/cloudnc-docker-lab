@@ -8,7 +8,7 @@
 
 2. Inside the `index.js` file content must be `console.log("Sever export port is 8080")`
 
-3. Create a `Dockerfile` and `pull node:slim`
+3. Create a `Dockerfile` and `pull node:alpine`
 
 4. Set a `work directory` to be `/app`
 
@@ -57,7 +57,7 @@ EOF
 cat index.js
 
 cat > Dockerfile <<EOF
-FROM node:slim
+FROM node:alpine
 
 WORKDIR /app
 
@@ -83,3 +83,5 @@ docker run --name node-container hello-node
 ```{{exec}}
 
 </details>
+
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node-slim

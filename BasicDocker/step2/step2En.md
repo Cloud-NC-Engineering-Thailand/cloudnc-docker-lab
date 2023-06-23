@@ -19,6 +19,10 @@ All neccessary command in this lab
 2. `docker image ls` - Use to call all the image that exist on machine
 3. `docker push (tag name)` - Use to push a tag image to Dockerhub or other containers
 
+All neccessary Dockerfile syntax
+1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
+2. `CMD ["(command line)"]` - Defines the default command to run when the container starts.
+
 </details>
 
 <details>

@@ -57,7 +57,7 @@ EOF
 cat index.js
 
 cat > Dockerfile <<EOF
-FROM node:slim
+FROM node:alpine
 
 WORKDIR /app
 
