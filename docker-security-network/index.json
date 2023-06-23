@@ -15,11 +15,18 @@
             },
             {
                 "title": "Environment variable with Dockerfile",
-                "text": "step2/security2.md"
+                "text": "step2/security2.md",
+                "verify": "step2/verify.sh"
             },
             {
                 "title": "Add non root user",
-                "text": "step3/security3.md"
+                "text": "step3/security3.md",
+                "verify": "step3/verify.sh"
+            },
+            {
+                "title": "Create network",
+                "text": "step4/security4.md",
+                "verify": "step4/verify.sh"
             }
         ],
         "assets": {

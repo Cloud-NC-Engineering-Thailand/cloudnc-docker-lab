@@ -1,4 +1,4 @@
-LOGFILE=/ks/step-verify.log
+LOGFILE=/ks/step3-verify.log
 set -e # exit once any command fails
 
 {
@@ -8,11 +8,10 @@ set -e # exit once any command fails
     
     docker ps -a | grep node-container
 
-    if ! docker run hello-node 2>&1 | grep -q "Sever export port is 8080"; then
+    if !docker run hello-node 2>&1 | grep -q "Server start at port with environment variable 8080"; then
         echo "Output does not match expected message"
         exit 1
     fi
-
 
 
 } >> ${LOGFILE} 2>&1
