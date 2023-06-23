@@ -14,5 +14,3 @@ podman tag my-ping my-ping:1.0.1
 podman tag my-ping local-registry:5000/my-ping:1.0.1
 
 podman push local-registry:5000/my-ping:1.0.1
-
-# podman push local-registry:5000/my-ping:1.0.1
