@@ -28,7 +28,7 @@
               {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"},
               {"file": "solution.sh", "target": "/var/run/kc-internal", "chmod": "+x"}
             ]
-          }
+        }
     },
     "backend": {
         "imageid": "ubuntu"
