@@ -32,7 +32,7 @@ All neccessary command in this lab
 ```plain
 docker network create node-network
 docker network connect node-network node-container
-docker container inspect 1ac916abeb65
+docker container inspect node-container
 ```{{exec}}
 
 </details>

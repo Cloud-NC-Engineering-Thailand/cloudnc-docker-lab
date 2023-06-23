@@ -10,7 +10,8 @@
         "steps": [
             {
                 "title": "Running with nodejs",
-                "text": "step1/security1.md"
+                "text": "step1/security1.md",
+                "verify": "step1/verify.sh"
             },
             {
                 "title": "Environment variable with Dockerfile",

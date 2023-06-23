@@ -75,6 +75,7 @@ CMD [ "node", "index.js" ]
 EOF
 
 cat Dockerfile
+```{{exec}}
 
 ```plain
 docker build -t hello-node-env --build-arg NODEJSPORT="8080" .
