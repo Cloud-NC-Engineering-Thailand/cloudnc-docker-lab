@@ -13,7 +13,7 @@
 
 2. Pull the docker image of `node:alpine` and `node:slim` by using `docker pull (image:tag)`
 
-3. Use trivy to check for the vulnerability, issue and severity by running this command `docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node-slim`
+3. Use trivy to check for the vulnerability, issue and severity by running this command `docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image (imagename):(tag)` (Note: tag is up to you if you have the same image name you must specify a tag)
 
 
 # Result 
@@ -30,9 +30,9 @@ docker pull node:slim
 
 docker pull node:alpine
 
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node-slim
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node:slim
 
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node-alpine
+docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node:alpine
 
 
 ```{{exec}}
