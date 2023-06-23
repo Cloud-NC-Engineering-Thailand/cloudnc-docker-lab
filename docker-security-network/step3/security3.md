@@ -4,9 +4,9 @@
 
 # Tasks to be done
 
-1. Update `Dockerfile` and add a user with id=123 and username=foo
-
 1. `Remove` the previous docker image and docker container
+
+2. Update `Dockerfile` and add a user with id=3333 and username=foo
 
 3. `Rebuild` the docker image and container with the same cli command, docker image name must me `hello-node-env` , docker container name must be `node-container-env`
 
@@ -58,7 +58,7 @@ cat index.js
 cat > Dockerfile <<EOF
 FROM node:slim
 
-RUN useradd -u 123 foo
+RUN useradd -u 3333 foo
 
 USER foo
 
