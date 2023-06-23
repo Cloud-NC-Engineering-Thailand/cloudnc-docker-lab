@@ -11,7 +11,6 @@
 3. Push an Image that has a `Tag Version`.
 
 <detail>
-
 <summary>Hint</summary>
 
 All neccessary command in this lab

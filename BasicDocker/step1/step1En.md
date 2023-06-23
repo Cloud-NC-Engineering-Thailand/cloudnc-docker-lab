@@ -28,7 +28,7 @@ All neccessary command in this lab
 </detail>
 
 
-<details>
+<detail>
 <summary>Solution</summary>
 
 
