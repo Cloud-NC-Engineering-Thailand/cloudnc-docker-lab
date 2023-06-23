@@ -50,7 +50,7 @@ Create all file
 ```plain
 
 cat > index.js <<EOF
-console.log(`Server start at port with environment variable \${process.env.NODEJSPORT}`)
+console.log("Server start at port with environment variable " + process.env.NODEJSPORT)
 EOF
 
 cat index.js

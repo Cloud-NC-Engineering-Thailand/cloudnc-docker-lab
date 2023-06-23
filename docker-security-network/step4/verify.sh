@@ -13,6 +13,11 @@ set -e # exit once any command fails
         exit 1
     fi
 
+    if !docker container inspect node-container-env --format '{{ .Config.User}}' 2>&1 | grep -q "foo"; then
+        echo "Output does not match expected message"
+        exit 1
+    fi
+
     docker network ls | grep "node-network"
 
 } >> ${LOGFILE} 2>&1
