@@ -13,8 +13,6 @@ set -e # exit once any command fails
 
     docker ps -a | grep node-container
 
-    rm /tmp/curl || true
-
 } >> ${LOGFILE} 2>&1
 
 echo "done" # let Validator know success
