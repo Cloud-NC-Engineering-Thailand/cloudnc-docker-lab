@@ -50,7 +50,7 @@ Create all file
 ```plain
 
 cat > index.js <<EOF
-console.log(`Server start at port with environment variable ${process.env.NODEJSPORT}`)
+console.log(`Server start at port with environment variable \${process.env.NODEJSPORT}`)
 EOF
 
 cat index.js
@@ -69,9 +69,9 @@ ENV NODE_ENV production
 COPY . .
 
 ARG NODEJSPORT
-ENV NODEJSPORT $NODEJSPORT
+ENV NODEJSPORT \$NODEJSPORT
 
-EXPOSE ${NODEJSPORT}
+EXPOSE \${NODEJSPORT}
 
 CMD [ "node", "index.js" ]
 EOF
