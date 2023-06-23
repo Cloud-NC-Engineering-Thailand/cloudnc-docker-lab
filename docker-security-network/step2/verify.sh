@@ -4,11 +4,11 @@ set -e # exit once any command fails
 {
     date
 
-    docker image ls | grep hello-node
+    docker image ls | grep hello-node-env
     
-    docker ps -a | grep node-container
+    docker ps -a | grep node-container-env
 
-    if !docker run hello-node 2>&1 | grep -q "Server start at port with environment variable 8080"; then
+    if !docker run hello-node-env 2>&1 | grep -q "Server start at port with environment variable 8080"; then
         echo "Output does not match expected message"
         exit 1
     fi

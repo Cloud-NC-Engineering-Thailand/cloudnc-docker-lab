@@ -8,7 +8,7 @@
 
 1. `Remove` the previous docker image and docker container
 
-3. `Rebuild` the docker image and container with the same cli command
+3. `Rebuild` the docker image and container with the same cli command, docker image name must me `hello-node-env` , docker container name must be `node-container-env`
 
 <details>
 <summary>Hint</summary>
