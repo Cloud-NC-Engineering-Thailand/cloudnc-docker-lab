@@ -14,7 +14,7 @@
 3. Build `Image` named `my-ping` that can execute `ping google.com` when we start the image
 4. Build `container` named `ping-container` from `Image` named `my-ping`
 
-<detail>
+<details>
 <summary>Hint</summary>
 
 All neccessary command in this lab
@@ -25,10 +25,10 @@ All neccessary command in this lab
 3. `docker build -t (image name) .` - Use to build a docker image
 4. `docker image ls` - Use to call all the image that exist on machine
 5. `docker run --name (container name) (image name)` - Use to create a container from image
-</detail>
+</details>
 
 
-<detail>
+<details>
 <summary>Solution</summary>
 
 
@@ -63,4 +63,4 @@ Build container from DockerImage by running this following command
 docker run --name ping-container my-ping
 ```{{exec}}
 
-</detail>
+</details>

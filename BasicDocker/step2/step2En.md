@@ -10,7 +10,7 @@
 
 3. Push an Image that has a `Tag Version`.
 
-<detail>
+<details>
 <summary>Hint</summary>
 
 All neccessary command in this lab
@@ -19,9 +19,9 @@ All neccessary command in this lab
 2. `docker image ls` - Use to call all the image that exist on machine
 3. `docker push (tag name)` - Use to push a tag image to Dockerhub or other containers
 
-</detail>
+</details>
 
-<detail>
+<details>
 <summary>Solution</summary>
 
 ```plain
@@ -32,4 +32,4 @@ docker image ls
 docker push local-registry:5000/my-ping:1.0.1
 ```{{exec}}
 
-</detail>
+</details>
