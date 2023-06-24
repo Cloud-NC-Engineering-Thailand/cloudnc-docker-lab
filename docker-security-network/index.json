@@ -32,6 +32,11 @@
                 "title": "Create network",
                 "text": "step4/security4.md",
                 "verify": "step4/verify.sh"
+            },
+            {
+                "title": "Understanding network",
+                "text": "step5/security5.md",
+                "verify": "step5/verify.sh"
             }
         ],
         "assets": {

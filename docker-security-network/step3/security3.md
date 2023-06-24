@@ -37,7 +37,7 @@ All neccessary Dockerfile syntax
 `ENV NODEJSPORT $NODEJSPORT`
 ARG (env name) - Use for recieving the value of the environment variable on the cli command
 ENV (env name) (env value) - Use to set the environment variable name and value in the container
-8. RUN adduser -u (userid) (username) - Use to create a new user to a docker container
+8.`RUN apk add --no-cache shadow && useradd -u (userid) (username)` - Use to create a new user to a docker container
 9. User (username) - All the future command will be run by this user
 
 </details>
@@ -58,7 +58,8 @@ cat index.js
 cat > Dockerfile <<EOF
 FROM node:alpine
 
-RUN adduser -u 3333 foo
+RUN apk add --no-cache shadow && \
+    useradd -u 3333 foo
 
 USER foo
 
