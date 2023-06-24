@@ -84,4 +84,3 @@ docker run --name node-container hello-node
 
 </details>
 
-docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image node-slim
