@@ -43,7 +43,7 @@ All neccessary command in this lab
 4. `docer exit -it (container name) bash` - Use to access to the ubuntu container so we can run some cli command inside the container
 5. `docker network connect (network name) (container name)` - Use to connect the network with a docker container
 6. `docker container inspect (container id or container name)` - Use to inspect the container network
-7. `docker container inspect --format '{{ .NetworkSettings.Networks.(Your network name).IP address }}' (container id or container name)` - Use to inspect IP address of the container network
+7. `docker container inspect --format '{{ .NetworkSettings.Networks.(Your network name).IPAddress }}' (container id or container name)` - Use to inspect IP address of the container network
 8. `docker image ls` - Use to call all the image that exist on machine
 9. `docker container ps -a` - Use to list all exist container
 
@@ -84,9 +84,9 @@ docker run -t -d -p 3001:3001 --network net1 --name ubuntu1 ubuntu-image
 docker run -t -d -p 3002:3002 --network net2 --name ubuntu2 ubuntu-image
 docker run -t -d -p 3003:3003 --network net2 --name ubuntu2.1 ubuntu-image
 
-docker container inspect --format '{{ .NetworkSettings.Networks.net1.IP address }}' ubuntu1
-docker container inspect --format '{{ .NetworkSettings.Networks.net2.IP address }}' ubuntu2
-docker container inspect --format '{{ .NetworkSettings.Networks.net2.IP address }}' ubuntu2.1
+docker container inspect --format '{{ .NetworkSettings.Networks.net1.IPAddress }}' ubuntu1
+docker container inspect --format '{{ .NetworkSettings.Networks.net2.IPAddress }}' ubuntu2
+docker container inspect --format '{{ .NetworkSettings.Networks.net2.IPAddress }}' ubuntu2.1
 
 echo (Simply go back and refer to Task 6 for further instructions.)
 
