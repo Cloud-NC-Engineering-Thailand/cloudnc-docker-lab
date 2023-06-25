@@ -238,7 +238,6 @@ npm init -y
 
 cat > docker-compose.yml <<EOF
 version: '3.9'
-name: node-redis
 services: 
 
   node-container:
