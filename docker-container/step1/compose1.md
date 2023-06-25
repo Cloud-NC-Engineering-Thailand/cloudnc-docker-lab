@@ -85,7 +85,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 docker-compose --version
 
-```
+```{{execute}}
 
 
 
@@ -107,16 +107,16 @@ docker-compose --version
 
 
 6. For service `redis-container` 
-  - Use image name `redis:latest`
-  - Start on port `6379:6379`
-  - Connect to network name `backend`
+    - Use image name `redis:latest`
+    - Start on port `6379:6379`
+    - Connect to network name `backend`
 
 7. For service `node-container` 
-  - Use image name `nodeserver`
-  - Give a build context and path to Dockerfile
-  - Start on port `8000:8000`
-  - Make it start depends on `redis-container`
-  - Connect to network name `backend`
+    - Use image name `nodeserver`
+    - Give a build context and path to Dockerfile
+    - Start on port `8000:8000`
+    - Make it start depends on `redis-container`
+    - Connect to network name `backend`
 
 8. Run docker cli command to build and start the container
 
@@ -289,9 +289,9 @@ EOF
 Docker cli command
 ```plain
 
-docker compose build
+docker-compose build
 
-docker compose up
+docker-compose up
 
 ```{{exec}}
 
