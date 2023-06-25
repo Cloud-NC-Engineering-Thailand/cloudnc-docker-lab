@@ -13,7 +13,14 @@
                 "text": "step1/compose1.md",
                 "verify": "step1/verify.sh"
             }
-        ]
+        ],
+        "assets": {
+            "host01": [
+              {"file": "init.sh", "target": "/ks", "chmod": "+x"},
+              {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
+              {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
+            ]
+          }
     },
     "backend": {
         "imageid": "ubuntu"

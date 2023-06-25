@@ -16,8 +16,8 @@ const app = express()
 const port = 8000
 const bodyParser = require("body-parser")
 
-app.use(bodyParser.json({ limit: `10mb` }));
-app.use(bodyParser.urlencoded({ limit: `10mb`, extended: true }));
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 let redisClient = redis.createClient({
     socket:{
@@ -72,7 +72,25 @@ EOF
 
 cat index.js
 
-npm init -y
+cat > package.json <<EOF
+{
+  "name": "compose-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "redis": "^4.6.7"
+  }
+}
+EOF
 
 ```{{execute}}
 
@@ -126,9 +144,9 @@ docker-compose --version
 All neccessary command in this lab
 1. `touch (filename)` - Use to create a file
 2. `nano (filename)` - Use to edit a file
-3. `docker compose build` - Use to build Docker images for services defined in a docker-compose.yml
-4. `docker compose up` - Use to build all the services into container
-5. `docker compose down` - Use to remove all the container in the services
+3. `docker-compose build` - Use to build Docker images for services defined in a docker-compose.yml
+4. `docker-compose up` - Use to build all the services into container
+5. `docker-compose down` - Use to remove all the container in the services
 4. `docker image ls` - Use to call all the image that exist on machine
 5. `docker container ps -a` - Use to list all exist container
 6. `docker image rm (image name)` - Use to delete a docker image with a specifig name
@@ -180,8 +198,8 @@ const app = express()
 const port = 8000
 const bodyParser = require("body-parser")
 
-app.use(bodyParser.json({ limit: `10mb` }));
-app.use(bodyParser.urlencoded({ limit: `10mb`, extended: true }));
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 let redisClient = redis.createClient({
     socket:{
@@ -233,6 +251,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 EOF
+
 cat > package.json <<EOF
 {
   "name": "compose-tutorial",
@@ -251,7 +270,6 @@ cat > package.json <<EOF
     "redis": "^4.6.7"
   }
 }
-
 EOF
 
 
@@ -290,9 +308,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN --mount=type=cache,target=/app/.npm \
-  npm set cache /app/.npm && \
-  npm install
+RUN npm install
 
 COPY . .
 
