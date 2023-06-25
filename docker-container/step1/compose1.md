@@ -74,8 +74,7 @@ cat index.js
 
 npm init -y
 
-```
-<!-- {{execute}} -->
+```{{execute}}
 
 2. Create a `Dockerfile` and the content must be following by this 
     - Pull `node:alpine`
@@ -253,7 +252,6 @@ services:
 networks:
   backend:
 EOF
-
 ```{{exec}}
 
 Docker cli command

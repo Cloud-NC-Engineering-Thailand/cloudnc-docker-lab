@@ -1,6 +1,6 @@
 {
-    "title": "Basic security with docker",
-    "description": "Learn environment variable and non-root user",
+    "title": "Basic Docker Compose",
+    "description": "Learn how to use docker compose",
     "details": {
         "intro": {
             "text": "intro.md",
