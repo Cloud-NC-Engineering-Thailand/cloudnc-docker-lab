@@ -88,7 +88,7 @@ docker container inspect --format '{{ .NetworkSettings.Networks.net1.IPAddress }
 docker container inspect --format '{{ .NetworkSettings.Networks.net2.IPAddress }}' ubuntu2
 docker container inspect --format '{{ .NetworkSettings.Networks.net2.IPAddress }}' ubuntu2.1
 
-echo (Simply go back and refer to Task 6 for further instructions.)
+echo "(Simply go back and refer to Task 6 for further instructions)"
 
 ```{{exec}}
 

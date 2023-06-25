@@ -26,11 +26,11 @@ All neccessary command in this lab
 
 All neccessary Dockerfile syntax
 
-1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
-2. `WORKDIR (/path/to/workdir)` - Sets the folder inside the container where commands will be executed.
+1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image
+2. `WORKDIR (/path/to/workdir)` - Sets the folder inside the container where commands will be executed
 3. `COPY (path of file or folder that you want to copy) (destination of the file or folder) ` - Moves files or folders from your computer to the container.
 4. `EXPOSE (number of port that the image will be running on)` - Declares the port on which the container will listen for incoming connections.
-5. `CMD ["(command line)"]` - Defines the default command to run when the container starts.
+5. `CMD ["(command line)"]` - Defines the default command to run when the container starts
 6. `ENV NODE_ENV production` - Use to tell the node that our environment variable will be on porduction mode
 7.
 `ARG NODEJSPORT`

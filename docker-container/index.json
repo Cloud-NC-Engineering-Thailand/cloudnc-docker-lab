@@ -1,0 +1,21 @@
+{
+    "title": "Basic security with docker",
+    "description": "Learn environment variable and non-root user",
+    "details": {
+        "intro": {
+            "text": "intro.md",
+            "background": "init/background.sh",
+            "foreground": "init/foreground.sh"
+        },
+        "steps": [
+            {
+                "title": "basic docker compose",
+                "text": "step1/compose1.md",
+                "verify": "step1/verify.sh"
+            }
+        ]
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}

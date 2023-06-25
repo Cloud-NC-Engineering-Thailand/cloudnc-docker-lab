@@ -28,8 +28,8 @@ All neccessary command in this lab
 
 
 All neccessary Dockerfile syntax
-1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
-2. `CMD ["(command line)"]` - Defines the default command to run when the container starts.
+1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image
+2. `CMD ["(command line)"]` - Defines the default command to run when the container starts
 
 </details>
 
