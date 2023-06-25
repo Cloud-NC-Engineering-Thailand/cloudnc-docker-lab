@@ -76,6 +76,20 @@ npm init -y
 
 ```{{execute}}
 
+2. Install Docker compose
+```plain
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+```
+
+
+
+
 2. Create a `Dockerfile` and the content must be following by this 
     - Pull `node:alpine`
     - Set work directory to be at `/app`
@@ -87,13 +101,13 @@ npm init -y
 
 3. Create a `docker-compose.yml`
 
-4. Inslide `docker-compose.yml` use `version 3.9`, name the container to be `node-redis` 
+4. Inslide `docker-compose.yml` use `version 3.9`
 
 5. Create 2 services `node-container` and `redis-container`
 
 
 6. For service `redis-container` 
-  - Use image name `redis:;atest`
+  - Use image name `redis:latest`
   - Start on port `6379:6379`
   - Connect to network name `backend`
 
@@ -131,10 +145,9 @@ All neccessary Dockerfile syntax
 All neccessary docker-compose.yml syntax
 ```plain
 version: (version number)
-name: (docker container name)
 
 services:
-  (sub container name):
+  (container name):
     image: (image name)
     build:
       context: (path of the folder to be build)
@@ -246,12 +259,31 @@ services:
       - 6379:6379
     networks:
       - backend
-    volumes:
-      - ./data/redis:/data
     
 networks:
   backend:
 EOF
+
+
+cat > Dockerfile <<EOF
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN --mount=type=cache,target=/app/.npm \
+  npm set cache /app/.npm && \
+  npm install
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["node", "index.js"]
+EOF
+
+
 ```{{exec}}
 
 Docker cli command
