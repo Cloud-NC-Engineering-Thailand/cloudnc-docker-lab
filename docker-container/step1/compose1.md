@@ -233,8 +233,27 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 EOF
+cat > package.json <<EOF
+{
+  "name": "compose-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "redis": "^4.6.7"
+  }
+}
 
-npm init -y
+EOF
+
 
 cat > docker-compose.yml <<EOF
 version: '3.9'
