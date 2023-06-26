@@ -125,12 +125,9 @@ services:
         - (Your secret name)
     environment:
         - REDIS_PASS_FILE=/run/secrets/(file name)
-    command: 
-      - /bin/bash
-      - -c
-      - |
-        docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
-      - redis-server /redis.conf
+    command: >
+      sh -c "redis-server /redis.conf 
+      --requirepass $$(cat $$REDIS_PASS_FILE)"
 
 
 secrets:
@@ -241,12 +238,9 @@ services:
       - password
     environment:
       - REDIS_PASS_FILE=/run/secrets/password
-    command: 
-      - /bin/bash
-      - -c
-      - |
-        docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
-      - redis-server /redis.conf
+    command: >
+      sh -c "redis-server /redis.conf 
+      --requirepass $$(cat $$REDIS_PASS_FILE)"
 
     ports:
       - 6379:6379
