@@ -37,7 +37,7 @@ command: [
 
 4. After you have done task 1-3 stop and `remove all` the container that is running and `start a new container` you will recieve some error in nodejs server but that fine we will fix that in the next lab
 
-5. Open a new terminal and access to the redis container and type `ping` the response should be `pong` but in this case we tell the redis that only the user that is already authenticate can only run cli command in the terminal
+5. Open a new terminal and access to the redis container and type `redis-cli` after that type `ping` the response should be `pong` but in this case we tell the redis that only the user that is already authenticate can only run cli command in the terminal
 
 6. You need to use `AUTH (password)` in redis terminal first before running any cli command and if your password is correct now if you type `ping` and hit enter you will receive `pong` that mean you are ready to go.
 
