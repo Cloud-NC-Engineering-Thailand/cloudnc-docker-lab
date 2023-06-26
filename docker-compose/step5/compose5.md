@@ -5,6 +5,7 @@ In redis server if you remember, redis server need to be authenticate first but 
 1. Click this execute command
 
 ```plain
+
 cat > index.js <<EOF
 const redis = require("redis")
 const express = require('express')
@@ -66,8 +67,9 @@ app.listen(port, () => {
   
   console.log(`Example app listening on port ${port}`)
 })
-EOF
 
+
+EOF
 
 ```{{exec}}
 
@@ -142,7 +144,9 @@ networks:
 
 <details>
 <summary>Solution</summary>
+
 ```plain
+
 cat > index.js <<EOF
 const redis = require("redis")
 const express = require('express')
@@ -266,4 +270,6 @@ docker-compose build
 docker-compose up
 
 ```{{exec}}
+
+
 </details>

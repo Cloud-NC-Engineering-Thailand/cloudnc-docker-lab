@@ -8,7 +8,7 @@ set -e # exit once any command fails
 
     docker image ls | grep nodeserver
 
-    # cat password.txt | grep redis-password
+    cat password.txt | grep redis-password
 
 } >> ${LOGFILE} 2>&1
 
