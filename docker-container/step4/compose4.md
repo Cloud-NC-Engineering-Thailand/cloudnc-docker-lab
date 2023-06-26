@@ -160,7 +160,7 @@ docker-compose build
 
 docker-compose up
 
-```plain{{exec}}
+```{{exec}}
 
 
 </details>
