@@ -20,7 +20,7 @@
             {
                 "title": "Use docker storage to store data",
                 "text": "step3/compose3.md",
-                "verify": "step1/verify.sh"
+                "verify": "step3/verify.sh"
             },
             {
                 "title": "Use docker secret to give a password to redis",
