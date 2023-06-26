@@ -12,6 +12,24 @@
                 "title": "basic docker compose",
                 "text": "step1/compose1.md",
                 "verify": "step1/verify.sh"
+            },
+            {
+                "title": "Understand what we have build",
+                "text": "step2/compose2.md"
+            },
+            {
+                "title": "Use docker storage to store data",
+                "text": "step3/compose3.md",
+                "verify": "step1/verify.sh"
+            },
+            {
+                "title": "Use docker secret to give a password to redis",
+                "text": "step4/compose4.md",
+                "verify": "step1/verify.sh"
+            },
+            {
+                "title": "Fix error in nodejs server",
+                "text": "step5/compose5.md"
             }
         ],
         "assets": {

@@ -1,33 +1,26 @@
-# What we build in this lab
+# Why Error occur
 
-We will build a Node.js server that connects to a Redis database. You will be provided with instructions on how to write a Dockerfile and a docker-compose.yml file to start the Node.js server and the Redis server
+In redis server if you remember, redis server need to be authenticate first but in our nodejs server I didn't provide the password so to fix the error we need to modify index.js to provide the password to redis
 
-# What you'll learn on this lab
-
-1. Learn how to use docker compose to define multi-container at the same time
-
-# Tasks to be done
-
-1. Click Execute this block of command this will create a simple nodejs server that connect to the redis database
-
+1. Click this execute command
 
 ```plain
-
 cat > index.js <<EOF
 const redis = require("redis")
 const express = require('express')
 const app = express()
 const port = 8000
 const bodyParser = require("body-parser")
-
-app.use(bodyParser.json({ limit: "10mb" }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+const fs = require("fs")
+app.use(bodyParser.json({ limit: `10mb` }));
+app.use(bodyParser.urlencoded({ limit: `10mb`, extended: true }));
 
 let redisClient = redis.createClient({
     socket:{
         host: 'redis-container',
         port: 6379,
     },
+    password: fs.readFileSync(process.env.REDIS_PASS_FILE, 'utf8').trim(),
     legacyMode:true
 })
 redisClient.connect().catch(console.error)
@@ -42,7 +35,7 @@ app.get('/get/:key', async (req, res) => {
   try {
     await redisClient.get(key, async (error, data) => {
       if(error) {
-        return res.status(400).json({"msg":"Something Went Wrong"})
+        return res.status(400).json({"msg":"Something Went Wrong", error})
       }
       return res.status(200).json({key, data:JSON.parse(data)})
     })
@@ -70,77 +63,35 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
+  
   console.log(`Example app listening on port ${port}`)
 })
 EOF
 
-cat index.js
-
-cat > package.json <<EOF
-{
-  "name": "compose-tutorial",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.18.2",
-    "redis": "^4.6.7"
-  }
-}
-EOF
 
 ```{{execute}}
 
-2. Install Docker compose
+2. Stop and remove all the container that is running and also remove the image of nodeserver because we have modify some code so we need to rebuild the image so the code in the image will be update
+
+3. Rebuild an image, build and start a container
+
+4. Let try to grab some data that we have save in redis
+
 ```plain
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{
+    "key": "name",
+    "value": "cloudnc"
+  }' \
+  http://localhost:8000/set
 
-sudo chmod +x /usr/local/bin/docker-compose
-
-docker-compose --version
+curl -X GET http://localhost:8000/get/name
 
 ```{{execute}}
 
 
-
-
-2. Create a `Dockerfile` and the content must be following by this 
-    - Pull `node:alpine`
-    - Set work directory to be at `/app`
-    - Copy only the `package.json` to de
-    - RUN `npm install` in work directory `/app`
-    - Copy everythings to work directory `/app`
-    - `Expose` port to be `8080`
-    - Execute the command `node index.js`
-
-3. Create a `docker-compose.yml`
-
-4. Inslide `docker-compose.yml` use `version 3.9`
-
-5. Create 2 services `node-container` and `redis-container`
-
-
-6. For service `redis-container` 
-    - Use image name `redis:latest`
-    - Start on port `6379:6379`
-    - Connect to network name `backend`
-
-7. For service `node-container` 
-    - Use image name `nodeserver`
-    - Give a build context and path to Dockerfile
-    - Start on port `8000:8000`
-    - Make it start depends on `redis-container`
-    - Connect to network name `backend`
-
-8. Run docker cli command to build and start the container
 
 <details>
 <summary>Hint</summary>
@@ -155,14 +106,7 @@ All neccessary command in this lab
 5. `docker container ps -a` - Use to list all exist container
 6. `docker image rm (image name)` - Use to delete a docker image with a specifig name
 7. `docker container rm (container name)` - Use to delete a docker container with a specifig container
-
-All neccessary Dockerfile syntax
-1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image
-2. `WORKDIR (/path/to/workdir)` - Sets the folder inside the container where commands will be executed
-3. `COPY (path of file or folder that you want to copy) (destination of the file or folder) ` - Moves files or folders from your computer to the container
-4. `RUN` - Used to execute commands during the image build process. It allows you to run any command that you would typically run on a command line inside the container
-4. `EXPOSE (number of port that the image will be running on)` - Declares the port on which the container will listen for incoming connections
-5. `CMD ["(command line)"]` - Defines the default command to run when the container starts
+8. `docker exec -it (container name or container id) bash` - Use to access the container to run cli command
 
 All neccessary docker-compose.yml syntax
 ```plain
@@ -180,36 +124,47 @@ services:
       - (if this container name is start this container will start after)
     networks:
       - (network name)
-  
+    secrets:
+        - (Your secret name)
+    environment:
+        - REDIS_PASS_FILE=/run/secrets/(file name)
+    command: [
+        "bash", "-c",
+        '
+        docker-entrypoint.sh
+        --requirepass "$$(cat $$REDIS_PASS_FILE)"
+        '
+    ]
+
+secrets:
+  (Your secret name):
+    file: (file name)
+
 networks:
   (network name):
 ```
 
 </details>
 
-
 <details>
 <summary>Solution</summary>
-
-Create all file 
-
 ```plain
-
 cat > index.js <<EOF
 const redis = require("redis")
 const express = require('express')
 const app = express()
 const port = 8000
 const bodyParser = require("body-parser")
-
-app.use(bodyParser.json({ limit: "10mb" }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+const fs = require("fs")
+app.use(bodyParser.json({ limit: `10mb` }));
+app.use(bodyParser.urlencoded({ limit: `10mb`, extended: true }));
 
 let redisClient = redis.createClient({
     socket:{
         host: 'redis-container',
         port: 6379,
     },
+    password: fs.readFileSync(process.env.REDIS_PASS_FILE, 'utf8').trim(),
     legacyMode:true
 })
 redisClient.connect().catch(console.error)
@@ -224,7 +179,7 @@ app.get('/get/:key', async (req, res) => {
   try {
     await redisClient.get(key, async (error, data) => {
       if(error) {
-        return res.status(400).json({"msg":"Something Went Wrong"})
+        return res.status(400).json({"msg":"Something Went Wrong", error})
       }
       return res.status(200).json({key, data:JSON.parse(data)})
     })
@@ -252,35 +207,19 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
+  
   console.log(`Example app listening on port ${port}`)
 })
 EOF
 
-cat > package.json <<EOF
-{
-  "name": "compose-tutorial",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.18.2",
-    "redis": "^4.6.7"
-  }
-}
+cat > password.txt  <<EOF
+redis-password
 EOF
-
 
 cat > docker-compose.yml <<EOF
 version: '3.9'
 services: 
-
+  
   node-container:
     image: nodeserver
     build: 
@@ -290,48 +229,47 @@ services:
       - 8000:8000
     depends_on:
       - redis-container
+    secrets:
+      - password
+    environment:
+      - REDIS_PASS_FILE=/run/secrets/password
     networks:
       - backend 
 
   redis-container:
     image: redis:latest
+    secrets:
+      - password
+    environment:
+      - REDIS_PASS_FILE=/run/secrets/password
+    command: [
+      "bash", "-c",
+      '
+       docker-entrypoint.sh
+       --requirepass "$$(cat $$REDIS_PASS_FILE)"
+      '
+    ]
     ports:
       - 6379:6379
     networks:
       - backend
-    
+    volumes:
+      - ./data/redis:/data
+
+secrets:
+  password:
+    file: password.txt
+
 networks:
   backend:
+
 EOF
 
-
-cat > Dockerfile <<EOF
-FROM node:alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN npm install
-
-COPY . .
-
-EXPOSE 8000
-
-CMD ["node", "index.js"]
-EOF
-
-
-```{{exec}}
-
-Docker cli command
-```plain
+docker-compose down
 
 docker-compose build
 
 docker-compose up
 
-```{{exec}}
-
+```plain{{execute}}
 </details>
-
