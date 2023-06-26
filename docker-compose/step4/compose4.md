@@ -18,7 +18,7 @@ networks:
   (network name):
 ```
 
-3. Edit `docker-compose.yml` and add this line of code into `redis-container` image
+3. Edit `docker-compose.yml` and add this line of code into `redis-container` image, to running multiple command in `docker-compose.yml` you need to write this syntax that given below
 ```plain
 secrets:
     - (Your secret name)
@@ -29,7 +29,6 @@ command:
     - -c
     - |
       docker-entrypoint.sh --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)" 
-    - redis-server /redis.conf
 ```
        
 
@@ -81,7 +80,6 @@ services:
       - -c
       - |
         docker-entrypoint.sh --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)" 
-      - redis-server /redis.conf
       
 secrets:
   (Your secret name):
@@ -133,7 +131,6 @@ services:
       - -c
       - |
         docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
-      - redis-server /redis.conf
     ports:
       - 6379:6379
     networks:
