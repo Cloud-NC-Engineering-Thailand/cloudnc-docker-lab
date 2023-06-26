@@ -158,5 +158,5 @@ docker-compose build
 
 docker-compose up
 
-```plain{{execute}}
+```plain{{exec}}
 </details>

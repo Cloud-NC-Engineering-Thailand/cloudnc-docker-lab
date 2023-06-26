@@ -16,7 +16,7 @@ curl -X POST \
   }' \
   http://localhost:8000/set
 
-```{{execute}}
+```{{exec}}
 
 If you receive the message "Value set in Redis," it means the data has been successfully saved
 
@@ -26,7 +26,7 @@ So let try to get our data by running this command in terminal
 
 curl -X GET http://localhost:8000/get/name
 
-```{{execute}}
+```{{exec}}
 
 If you receive the response {"key":"name","data":"cloudnc"}, it means you have successfully retrieved the data from Redis
 

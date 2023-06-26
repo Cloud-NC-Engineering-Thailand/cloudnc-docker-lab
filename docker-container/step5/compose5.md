@@ -69,7 +69,7 @@ app.listen(port, () => {
 EOF
 
 
-```{{execute}}
+```{{exec}}
 
 2. Stop and remove all the container that is running and also remove the image of nodeserver because we have modify some code so we need to rebuild the image so the code in the image will be update
 
@@ -89,7 +89,7 @@ curl -X POST \
 
 curl -X GET http://localhost:8000/get/name
 
-```{{execute}}
+```{{exec}}
 
 
 
@@ -271,5 +271,5 @@ docker-compose build
 
 docker-compose up
 
-```plain{{execute}}
+```plain{{exec}}
 </details>
