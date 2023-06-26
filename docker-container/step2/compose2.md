@@ -16,7 +16,7 @@ If you receive the message "Value set in Redis," it means the data has been succ
 
 So let try to get our data by running this command in terminal
 
-``plain
+```plain
 
 curl -X GET http://localhost:8000/get/name
 
@@ -35,7 +35,7 @@ After that, start the container again by type `docker-compose up` in the termina
 
 curl -X GET http://localhost:8000/get/name
 
-```{{execute}}
+```{{exec}}
 
 You will receive a response that is not {"key":"name","data":"cloudnc"}. This happens because the container was removed along with the data stored in Redis
 

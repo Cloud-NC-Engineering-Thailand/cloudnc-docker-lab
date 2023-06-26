@@ -57,7 +57,9 @@ All neccessary command in this lab
 8. `docker exec -it (container name or container id) bash` - Use to access the container to run cli command
 
 All neccessary docker-compose.yml syntax
+
 ```plain
+
 version: (version number)
 
 services:
@@ -90,7 +92,7 @@ secrets:
 
 networks:
   (network name):
-```
+```{{exec}}
 
 </details>
 

@@ -20,7 +20,9 @@ After you have change in `docker-compose.yml` try to save the data to redis and 
 
 <details>
 <summary>Solution</summary>
+
 ```plain
+
 cat > docker-compose.yml <<EOF
 version: '3.9'
 services: 
