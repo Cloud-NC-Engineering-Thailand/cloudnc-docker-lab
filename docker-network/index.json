@@ -1,0 +1,34 @@
+{
+    "title": "Basic docker network",
+    "description": "Learn why we need network",
+    "details": {
+        "intro": {
+            "text": "intro.md",
+            "background": "init/background.sh",
+            "foreground": "init/foreground.sh"
+        },
+        "steps": [
+          
+            {
+                "title": "Basic network command",
+                "text": "step1/network1.md",
+                "verify": "step1/verify.sh"
+            },
+            {
+                "title": "Understanding network why we need network",
+                "text": "step2/network2.md",
+                "verify": "step2/verify.sh"
+            }
+        ],
+        "assets": {
+            "host01": [
+              {"file": "init.sh", "target": "/ks", "chmod": "+x"},
+              {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
+              {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
+            ]
+        }
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}

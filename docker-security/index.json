@@ -27,24 +27,13 @@
                 "title": "Add non root user",
                 "text": "step3/security3.md",
                 "verify": "step3/verify.sh"
-            },
-            {
-                "title": "Create network",
-                "text": "step4/security4.md",
-                "verify": "step4/verify.sh"
-            },
-            {
-                "title": "Understanding network",
-                "text": "step5/security5.md",
-                "verify": "step5/verify.sh"
             }
         ],
         "assets": {
             "host01": [
               {"file": "init.sh", "target": "/ks", "chmod": "+x"},
               {"file": "k8s.sh", "target": "/ks", "chmod": "+x"},
-              {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"},
-              {"file": "solution.sh", "target": "/var/run/kc-internal", "chmod": "+x"}
+              {"file": "wait-init.sh", "target": "/ks", "chmod": "+x"}
             ]
         }
     },

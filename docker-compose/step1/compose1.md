@@ -125,7 +125,7 @@ docker-compose --version
 
 6. Inslide `docker-compose.yml` use `version 3.9`
 
-7. Create 2 services `node-container` and `redis-container`
+7. Create 2 services `node-container` and `redis-container` and container name should be `node-container` and `redis-container`
 
 
 8. For service `redis-container` 
@@ -170,7 +170,8 @@ All neccessary docker-compose.yml syntax
 version: (version number)
 
 services:
-  (container name):
+  (service name):
+    container_name: (container name)
     image: (image name)
     build:
       context: (path of the folder to be build)
@@ -283,6 +284,7 @@ version: '3.9'
 services: 
 
   node-container:
+    container_name: node-container
     image: nodeserver
     build: 
       context: .
@@ -295,6 +297,7 @@ services:
       - backend 
 
   redis-container:
+    container_name: redis-container
     image: redis:latest
     ports:
       - 6379:6379

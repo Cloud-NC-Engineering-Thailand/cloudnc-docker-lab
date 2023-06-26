@@ -4,11 +4,15 @@
 
 # Tasks to be done
 
-1. Create a docker network name `node-network`
+1. Create a docker network name `test-network`
 
-2. Connect our `container` with the `node-network`
+2. Run `docker pull hello-world`
 
-3. Check that the network is exist or not all the cli command you can find in the hint section
+3. Create container name `hello-container` and use the image  `hello-world`
+
+4. Connect `hello-container` with the `test-network`
+
+5. Check that the network is exist or not all the cli command you can find in the hint section
 
 <details>
 <summary>Hint</summary>
@@ -23,6 +27,7 @@ All neccessary command in this lab
 6. `docker container inspect (containerid)` - Use to inspect the container network
 7. `docker image ls` - Use to call all the image that exist on machine
 8. `docker container ps -a` - Use to list all exist container
+9. `docker run --name (container name) (image name)` - Use to create a container from image
 
 </details>
 
@@ -32,9 +37,10 @@ All neccessary command in this lab
 Docker cli command
 
 ```plain
-docker network create node-network
-docker network connect node-network node-container
-docker container inspect node-container
+docker run --name hello-container hello-world
+docker network create test-network
+docker network connect test-network hello-container
+docker container inspect hello-container
 ```{{exec}}
 
 </details>

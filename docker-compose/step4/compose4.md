@@ -61,7 +61,8 @@ All neccessary docker-compose.yml syntax
 version: (version number)
 
 services:
-  (container name):
+  (service name):
+    container_name: (container name)
     image: (image name)
     build:
       context: (path of the folder to be build)
@@ -107,6 +108,7 @@ version: '3.9'
 services: 
   
   node-container:
+    container_name: node-container
     image: nodeserver
     build: 
       context: .
@@ -123,6 +125,7 @@ services:
       - backend 
 
   redis-container:
+    container_name: redis-container
     image: redis:latest
     secrets:
       - password
