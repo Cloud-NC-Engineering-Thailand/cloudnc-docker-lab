@@ -6,11 +6,9 @@
 
 # Tasks to be done
 
-1. You need to initialize `docker swarm` first before using the `docker secret`
+1. Create a file name `password.txt` content of the file must be `redis-password` (it's up to you but in this case I want it to be simple and easy to remember, make sure that when you submit the content in the file is `redis-password`)
 
-2. Create a file name `password.txt` content of the file must be `redis-password` (it's up to you but in this case I want it to be simple and easy to remember, make sure that when you submit the content in the file is `redis-password`)
-
-3. Update the `docker-compose.yml` add ths line of code above the networks
+2. Update the `docker-compose.yml` add ths line of code above the networks
 ```plain
 secrets:
   (Your secret name):
@@ -26,14 +24,14 @@ secrets:
     - (Your secret name)
 environment:
     - REDIS_PASS_FILE=/run/secrets/(file name)
-command: [
-      "bash", "-c",
-      '
-       docker-entrypoint.sh
-       --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
-      '
-    ]
+command: 
+    - /bin/bash
+    - -c
+    - |
+      docker-entrypoint.sh --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)" 
+    - redis-server /redis.conf
 ```
+       
 
 4. After you have done task 1-3 stop and `remove all` the container that is running and `start a new container` you will recieve some error in nodejs server but that fine we will fix that in the next lab
 
@@ -78,14 +76,13 @@ services:
         - (Your secret name)
     environment:
         - REDIS_PASS_FILE=/run/secrets/(file name)
-    command: [
-        "bash", "-c",
-        '
-        docker-entrypoint.sh
-        --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
-        '
-    ]
-
+    command: 
+      - /bin/bash
+      - -c
+      - |
+        docker-entrypoint.sh --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)" 
+      - redis-server /redis.conf
+      
 secrets:
   (Your secret name):
     file: (file name)
@@ -131,19 +128,19 @@ services:
       - password
     environment:
       - REDIS_PASS_FILE=/run/secrets/password
-    command: [
-      "bash", "-c",
-      '
-       docker-entrypoint.sh
-       --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
-      '
-    ]
+    command: 
+      - /bin/bash
+      - -c
+      - |
+        docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
+      - redis-server /redis.conf
     ports:
       - 6379:6379
     networks:
       - backend
     volumes:
       - ./data/redis:/data
+      - ./config/redis.conf:/redis.conf
 
 secrets:
   password:

@@ -13,8 +13,8 @@ const app = express()
 const port = 8000
 const bodyParser = require("body-parser")
 const fs = require("fs")
-app.use(bodyParser.json({ limit: `10mb` }));
-app.use(bodyParser.urlencoded({ limit: `10mb`, extended: true }));
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 let redisClient = redis.createClient({
     socket:{
@@ -125,13 +125,12 @@ services:
         - (Your secret name)
     environment:
         - REDIS_PASS_FILE=/run/secrets/(file name)
-    command: [
-        "bash", "-c",
-        '
-        docker-entrypoint.sh
-        --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
-        '
-    ]
+    command: 
+      - /bin/bash
+      - -c
+      - |
+        docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
+      - redis-server /redis.conf
 
 secrets:
   (Your secret name):
@@ -155,8 +154,8 @@ const app = express()
 const port = 8000
 const bodyParser = require("body-parser")
 const fs = require("fs")
-app.use(bodyParser.json({ limit: `10mb` }));
-app.use(bodyParser.urlencoded({ limit: `10mb`, extended: true }));
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 let redisClient = redis.createClient({
     socket:{
@@ -241,19 +240,19 @@ services:
       - password
     environment:
       - REDIS_PASS_FILE=/run/secrets/password
-    command: [
-      "bash", "-c",
-      '
-       docker-entrypoint.sh
-       --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
-      '
-    ]
+    command: 
+      - /bin/bash
+      - -c
+      - |
+        docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
+      - redis-server /redis.conf
     ports:
       - 6379:6379
     networks:
       - backend
     volumes:
       - ./data/redis:/data
+      - ./config/redis.conf:/redis.conf
 
 secrets:
   password:
