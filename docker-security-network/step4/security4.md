@@ -29,6 +29,7 @@ All neccessary command in this lab
 <details>
 <summary>Solution</summary>
 
+Docker cli command
 
 ```plain
 docker network create node-network

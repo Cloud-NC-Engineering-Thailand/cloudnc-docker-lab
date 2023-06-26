@@ -74,7 +74,6 @@ Docker cli command
 
 ```plain
 
-
 docker network create net1
 docker network create net2
 

@@ -80,6 +80,8 @@ EOF
 cat Dockerfile
 ```{{exec}}
 
+Docker cli command
+
 ```plain
 docker build -t hello-node-env --build-arg NODEJSPORT="8080" .
 docker run --name node-container-env hello-node-env
