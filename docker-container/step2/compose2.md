@@ -2,7 +2,7 @@
 
 We have created a very simple server that can receive requests to save data to a Redis database and retrieve data from it
 
-Let do some example so you can understand what we are doing, first of all open a new terminal and make sure the container is running by typing `docker-compose up`
+Let do some example so you can understand what we are doing, first of all open a `new terminal` and make sure the container is running by typing `docker-compose up`
 
 Let save some data into the database by running the following command in the terminal
 

@@ -51,6 +51,7 @@ services:
 networks:
   backend:
 EOF
+
 ```{{exec}}
 
 </details>

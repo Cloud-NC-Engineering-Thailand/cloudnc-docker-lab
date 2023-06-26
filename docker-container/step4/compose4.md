@@ -98,8 +98,8 @@ networks:
 
 <details>
 <summary>Solution</summary>
-```plain
 
+```plain
 
 cat > password.txt  <<EOF
 redis-password
@@ -161,4 +161,6 @@ docker-compose build
 docker-compose up
 
 ```plain{{exec}}
+
+
 </details>
