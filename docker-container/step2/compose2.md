@@ -8,13 +8,7 @@ Let save some data into the database by running the following command in the ter
 
 ```plain
 
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -d '{
-    "key": "name",
-    "value": "cloudnc"
-  }' \
-  http://localhost:8000/set
+curl -X POST -H "Content-Type: application/json" -d '{"key": "name","value": "cloudnc"}' http://localhost:8000/set
 
 ```{{exec}}
 

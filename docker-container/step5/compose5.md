@@ -79,13 +79,7 @@ EOF
 
 ```plain
 
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -d '{
-    "key": "name",
-    "value": "cloudnc"
-  }' \
-  http://localhost:8000/set
+curl -X POST -H "Content-Type: application/json" -d '{"key": "name","value": "cloudnc"}' http://localhost:8000/set
 
 curl -X GET http://localhost:8000/get/name
 
