@@ -25,7 +25,7 @@
             {
                 "title": "Use docker secret to give a password to redis",
                 "text": "step4/compose4.md",
-                "verify": "step1/verify.sh"
+                "verify": "step4/verify.sh"
             },
             {
                 "title": "Fix error in nodejs server",
