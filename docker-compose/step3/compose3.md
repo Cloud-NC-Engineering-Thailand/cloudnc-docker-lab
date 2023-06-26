@@ -4,6 +4,7 @@
 
 # Tasks to be done
 
+(we need to add new config to our redis database if anybody didn't create redis.conf yet, follow this step; Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/tree/main"> into `redis.conf`)
 
 1. You need to edit `docker-compose.yml` add this line of code to `redis-container`
 
@@ -14,7 +15,9 @@ volumes:
 
 ```
 
-In this case, we will mount the path `./data/redis:/data` this means that our Redis data will be stored in the data/redis folder, and all the files containing the data will be inside the redis folder
+In this case, we will mount the path `./data/redis:/data` and we also need to mount the config path to be `./config/redis.conf:/redis.conf`, this means that our Redis data will be stored in the data/redis folder, and all the files containing the data will be inside the redis folder
+
+After you have mount the data and the redis config path you need to run the `command` into `redis-server` to let the `redis-server` know that we going to have a new config to `redis` command for tell redis-server `redis-server /redis.conf`
 
 After you have change in `docker-compose.yml` try to save the data to redis and then run `docker-compose down` and run `docker-compose up` and run `curl -X GET http://localhost:8000/get/(your key name)` in terminal, you will see that now the data is not lost.
 
@@ -37,9 +40,9 @@ services:
       - (if this container name is start this container will start after)
     networks:
       - (network name)
-    command: (Your command line that you want to execute)
     volumes:
       - (host directory):(target directory for container)
+    command: (Your command line that you want to execute)
   
 networks:
   (network name):
@@ -77,7 +80,7 @@ services:
     volumes:
       - ./data/redis:/data
       - ./config/redis.conf:/redis.conf
-
+    command: redis-server /redis.conf
     
 networks:
   backend:

@@ -130,6 +130,8 @@ services:
       - -c
       - |
         docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
+      - redis-server /redis.conf
+
 
 secrets:
   (Your secret name):
@@ -244,12 +246,16 @@ services:
       - -c
       - |
         docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
+      - redis-server /redis.conf
+
     ports:
       - 6379:6379
     networks:
       - backend
     volumes:
       - ./data/redis:/data
+      - ./config/redis.conf:/redis.conf
+
 
 secrets:
   password:
