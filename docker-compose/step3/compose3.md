@@ -21,6 +21,14 @@ After you have mount the data and the redis config path you need to run the `com
 
 After you have change in `docker-compose.yml` try to save the data to redis and then run `docker-compose down` and run `docker-compose up` and run `curl -X GET http://localhost:8000/get/(your key name)` in terminal, you will see that now the data is not lost.
 
+```plain
+
+curl -X POST -H "Content-Type: application/json" -d '{"key": "name","value": "cloudnc"}' http://localhost:8000/set
+
+curl -X GET http://localhost:8000/get/name
+
+```
+
 <details>
 <summary>Hint</summary>
 

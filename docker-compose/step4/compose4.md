@@ -29,6 +29,7 @@ command:
     - -c
     - |
       docker-entrypoint.sh --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)" 
+    - redis-server /redis.conf
 ```
        
 
@@ -36,7 +37,7 @@ command:
 
 5. Open a new terminal and access to the redis container and type `redis-cli` after that type `ping` the response should be `pong` but in this case we tell the redis that only the user that is already authenticate can only run cli command in the terminal
 
-6. You need to use `AUTH (password)` in redis terminal first before running any cli command and if your password is correct now if you type `ping` and hit enter you will receive `pong` that mean you are ready to go.
+6. You need to use `AUTH (password)` in redis terminal first before running any cli command and if your password is correct now if you type ping and hit enter you will receive pong that mean you are ready to go.
 
 <details>
 <summary>Hint</summary>
@@ -131,7 +132,7 @@ services:
       - /bin/bash
       - -c
       - |
-        docker-entrypoint.sh --requirepass "$$(cat $$REDIS_PASS_FILE)" 
+        docker-entrypoint.sh --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)" 
       - redis-server /redis.conf
     ports:
       - 6379:6379

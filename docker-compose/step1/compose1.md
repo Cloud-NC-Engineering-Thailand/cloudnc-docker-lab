@@ -8,7 +8,7 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 
 # Tasks to be done
 
-1. Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/tree/main"> into `redis.conf`
+1. Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank"> into `redis.conf`
 
 2. Click Execute this block of command this will create a simple nodejs server that connect to the redis database
 
@@ -146,15 +146,16 @@ docker-compose --version
 <summary>Hint</summary>
 
 All neccessary command in this lab
-1. `touch (filename)` - Use to create a file
-2. `nano (filename)` - Use to edit a file
-3. `docker-compose build` - Use to build Docker images for services defined in a docker-compose.yml
-4. `docker-compose up` - Use to build all the services into container
-5. `docker-compose down` - Use to remove all the container in the services
-4. `docker image ls` - Use to call all the image that exist on machine
-5. `docker container ps -a` - Use to list all exist container
-6. `docker image rm (image name)` - Use to delete a docker image with a specifig name
-7. `docker container rm (container name)` - Use to delete a docker container with a specifig container
+1. `mkdir (folder name)` - Use to create a folder
+2. `touch (filename)` - Use to create a file
+3. `nano (filename)` - Use to edit a file
+4. `docker-compose build` - Use to build Docker images for services defined in a docker-compose.yml
+5. `docker-compose up` - Use to build all the services into container
+6. `docker-compose down` - Use to remove all the container in the services
+7. `docker image ls` - Use to call all the image that exist on machine
+8. `docker container ps -a` - Use to list all exist container
+9. `docker image rm (image name)` - Use to delete a docker image with a specifig name
+10. `docker container rm (container name)` - Use to delete a docker container with a specifig container
 
 All neccessary Dockerfile syntax
 1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image
