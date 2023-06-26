@@ -30,7 +30,7 @@ command: [
       "bash", "-c",
       '
        docker-entrypoint.sh
-       --requirepass "$$(cat $$REDIS_PASS_FILE)"
+       --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
       '
     ]
 ```
@@ -82,7 +82,7 @@ services:
         "bash", "-c",
         '
         docker-entrypoint.sh
-        --requirepass "$$(cat $$REDIS_PASS_FILE)"
+        --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
         '
     ]
 
@@ -135,7 +135,7 @@ services:
       "bash", "-c",
       '
        docker-entrypoint.sh
-       --requirepass "$$(cat $$REDIS_PASS_FILE)"
+       --requirepass "\$\$(cat \$\$REDIS_PASS_FILE)"
       '
     ]
     ports:

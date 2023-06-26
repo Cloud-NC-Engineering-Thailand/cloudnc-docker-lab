@@ -49,7 +49,7 @@ app.get('/get/:key', async (req, res) => {
 
   } catch (err) {
     console.error('Error getting value from Redis:', err);
-    res.status(500).send({ error: 'Internal Server Error' });
+    res.status(500).send({ error: 'Internal Server Error' + err,  });
   }
 });
 
@@ -61,7 +61,7 @@ app.post('/set', async (req, res) => {
     return res.status(200).json({ message: 'Value set in Redis' });
   } catch (err) {
     console.error('Error setting value in Redis:', err);
-    res.status(500).send({ error: 'Internal Server Error' });
+    res.status(500).send({ error: 'Internal Server Error' + err,  });
   }
 });
 
@@ -231,7 +231,7 @@ app.get('/get/:key', async (req, res) => {
 
   } catch (err) {
     console.error('Error getting value from Redis:', err);
-    res.status(500).send({ error: 'Internal Server Error' });
+    res.status(500).send({ error: 'Internal Server Error' + err,  });
   }
 });
 
@@ -243,7 +243,7 @@ app.post('/set', async (req, res) => {
     return res.status(200).json({ message: 'Value set in Redis' });
   } catch (err) {
     console.error('Error setting value in Redis:', err);
-    res.status(500).send({ error: 'Internal Server Error' });
+    res.status(500).send({ error: 'Internal Server Error' + err,  });
   }
 });
 
