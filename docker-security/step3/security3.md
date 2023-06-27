@@ -45,9 +45,9 @@ ARG (env name) - Use for recieving the value of the environment variable on the 
 ENV (env name) (env value) - Use to set the environment variable name and value in the container
 
 
-\8.`RUN apk add --no-cache shadow && useradd -u (userid) (username)` - Use to create a new user to a docker container
+8.`RUN apk add --no-cache shadow && useradd -u (userid) (username)` - Use to create a new user to a docker container
 
-\9. User (username) - All the future command will be run by this user
+9. User (username) - All the future command will be run by this user
 
 </details>
 

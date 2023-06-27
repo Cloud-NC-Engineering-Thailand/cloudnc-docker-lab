@@ -8,7 +8,7 @@
 
 2. Inside the `index.js` file content must be `console.log("Server start at port with environment variable " + process.env.NODEJSPORT)`
 
-3. Update Dockerfile sest the `NODE_ENV` to `production` by writing this in Dockerfile `ENV NODE_ENV production` this will let the node know that we want the environment to be on production mode
+3. Update Dockerfile set the `NODE_ENV` to `production` by writing this in Dockerfile `ENV NODE_ENV production` this will let the node know that we want the environment to be on production mode
 
 4. Declare the `environment variable` in `Dockerfile` name `NODEJSPORT` and change the `EXPOSE 8080` to `EXPORT ${NODEJSPORT}` all of the syntax you can find in the hint section
 
@@ -31,7 +31,7 @@ All neccessary command in this lab
 
 All neccessary Dockerfile syntax
 1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
-2. `WORKDIR (/path/to/workdir)` - Sets the folder inside the container where commands will be executed.
+2. `WORKDIR (/path/to/workdir)` - Set the folder inside the container where commands will be executed.
 3. `COPY (path of file or folder that you want to copy) (destination of the file or folder) ` - Moves files or folders from your computer to the container.
 4. `EXPOSE (number of port that the image will be running on)` - Declares the port on which the container will listen for incoming connections.
 5. `CMD ["(command line)"]` - Defines the default command to run when the container starts

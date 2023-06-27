@@ -9,6 +9,7 @@ set -e # exit once any command fails
     docker ps -a | grep node-container
 
     docker ps -a | grep redis-container
+    
 } >> ${LOGFILE} 2>&1
 
 echo "done" # let Validator know success

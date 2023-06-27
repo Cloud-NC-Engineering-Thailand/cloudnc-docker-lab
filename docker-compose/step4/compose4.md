@@ -9,25 +9,25 @@
 1. Create a file name `password.txt` content of the file must be `redis-password` (it's up to you but in this case I want it to be simple and easy to remember, make sure that when you submit the content in the file is `redis-password`)
 
 2. Update the `docker-compose.yml` add ths line of code above the networks
-```plain
-secrets:
-  (Your secret name):
-    file: (file name)
+  ```plain
+  secrets:
+    (Your secret name):
+      file: (file name)
 
-networks:
-  (network name):
-```
+  networks:
+    (network name):
+  ```
 
 3. Edit `docker-compose.yml` and add this line of code into `redis-container` image, to running multiple command in `docker-compose.yml` you need to write this syntax that given below
-```plain
-secrets:
-    - (Your secret name)
-environment:
-    - REDIS_PASS_FILE=/run/secrets/(file name)
-command: >
-    sh -c "redis-server /redis.conf 
-    --requirepass \$\$(cat \$\$REDIS_PASS_FILE)"
-```
+  ```plain
+  secrets:
+      - (Your secret name)
+  environment:
+      - REDIS_PASS_FILE=/run/secrets/(file name)
+  command: >
+      sh -c "redis-server /redis.conf 
+      --requirepass $$(cat $$REDIS_PASS_FILE)"
+  ```
        
 
 4. After you have done task 1-3 stop and `remove all` the container that is running and `start a new container` you will recieve some error in nodejs server but that fine we will fix that in the next lab
@@ -126,7 +126,7 @@ services:
       - REDIS_PASS_FILE=/run/secrets/password
     command: >
       sh -c "redis-server /redis.conf 
-      --requirepass $$(cat $$REDIS_PASS_FILE)"
+      --requirepass \$\$(cat \$\$REDIS_PASS_FILE)"
     ports:
       - 6379:6379
     networks:

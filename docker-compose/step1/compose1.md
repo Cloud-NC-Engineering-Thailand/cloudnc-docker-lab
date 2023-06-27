@@ -13,103 +13,103 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 2. Click Execute this block of command this will create a simple nodejs server that connect to the redis database
 
 
-```plain
+  ```plain
 
-cat > index.js <<EOF
-const redis = require("redis")
-const express = require('express')
-const app = express()
-const port = 8000
-const bodyParser = require("body-parser")
+  cat > index.js <<EOF
+  const redis = require("redis")
+  const express = require('express')
+  const app = express()
+  const port = 8000
+  const bodyParser = require("body-parser")
 
-app.use(bodyParser.json({ limit: "10mb" }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+  app.use(bodyParser.json({ limit: "10mb" }));
+  app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
-let redisClient = redis.createClient({
-    socket:{
-        host: 'redis-container',
-        port: 6379,
+  let redisClient = redis.createClient({
+      socket:{
+          host: 'redis-container',
+          port: 6379,
+      },
+      legacyMode:true
+  })
+  redisClient.connect().catch(console.error)
+  redisClient.on('error', err => console.log('Redis Server Error', err));
+  redisClient.on("connect", function() {
+    console.log("Connected")
+  })
+
+  app.get('/get/:key', async (req, res) => {
+    const { key } = req.params;
+
+    try {
+      await redisClient.get(key, async (error, data) => {
+        if(error) {
+          return res.status(400).json({"msg":"Something Went Wrong"})
+        }
+        return res.status(200).json({key, data:JSON.parse(data)})
+      })
+
+    } catch (err) {
+      console.error('Error getting value from Redis:', err);
+      res.status(500).send({ error: 'Internal Server Error' + err,  });
+    }
+  });
+
+  app.post('/set', async (req, res) => {
+    const { key, value } = req.body;
+    try {
+      await redisClient.setEx(key, 60*60, JSON.stringify(value));
+
+      return res.status(200).json({ message: 'Value set in Redis' });
+    } catch (err) {
+      console.error('Error setting value in Redis:', err);
+      res.status(500).send({ error: 'Internal Server Error' + err,  });
+    }
+  });
+
+  app.get('/', (req, res) => {
+    return res.status(200).json({msg:"hello"})
+  })
+
+  app.listen(port, () => {
+    console.log("Example app listening on port " + port)
+  })
+  EOF
+
+  cat index.js
+
+  cat > package.json <<EOF
+  {
+    "name": "compose-tutorial",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
     },
-    legacyMode:true
-})
-redisClient.connect().catch(console.error)
-redisClient.on('error', err => console.log('Redis Server Error', err));
-redisClient.on("connect", function() {
-  console.log("Connected")
-})
-
-app.get('/get/:key', async (req, res) => {
-  const { key } = req.params;
-
-  try {
-    await redisClient.get(key, async (error, data) => {
-      if(error) {
-        return res.status(400).json({"msg":"Something Went Wrong"})
-      }
-      return res.status(200).json({key, data:JSON.parse(data)})
-    })
-
-  } catch (err) {
-    console.error('Error getting value from Redis:', err);
-    res.status(500).send({ error: 'Internal Server Error' + err,  });
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.20.2",
+      "express": "^4.18.2",
+      "redis": "^4.6.7"
+    }
   }
-});
+  EOF
 
-app.post('/set', async (req, res) => {
-  const { key, value } = req.body;
-  try {
-    await redisClient.setEx(key, 60*60, JSON.stringify(value));
-
-    return res.status(200).json({ message: 'Value set in Redis' });
-  } catch (err) {
-    console.error('Error setting value in Redis:', err);
-    res.status(500).send({ error: 'Internal Server Error' + err,  });
-  }
-});
-
-app.get('/', (req, res) => {
-  return res.status(200).json({msg:"hello"})
-})
-
-app.listen(port, () => {
-  console.log("Example app listening on port " + port)
-})
-EOF
-
-cat index.js
-
-cat > package.json <<EOF
-{
-  "name": "compose-tutorial",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.18.2",
-    "redis": "^4.6.7"
-  }
-}
-EOF
-
-```{{execute}}
+  ```{{execute}}
 
 3. Install Docker compose
-```plain
+  ```plain
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-sudo chmod +x /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
 
-docker-compose --version
+  docker-compose --version
 
-```{{execute}}
+  ```{{execute}}
 
 
 4. Create a `Dockerfile` and the content must be following by this 
@@ -123,7 +123,7 @@ docker-compose --version
 
 5. Create a `docker-compose.yml`
 
-6. Inslide `docker-compose.yml` use `version 3.9`
+6. Inside `docker-compose.yml` use `version 3.9`
 
 7. Create 2 services `node-container` and `redis-container` and container name should be `node-container` and `redis-container`
 

@@ -97,6 +97,10 @@ networks:
   backend:
 EOF
 
+docker-compose down
+
+docker-compose up
+
 ```{{exec}}
 
 </details>
