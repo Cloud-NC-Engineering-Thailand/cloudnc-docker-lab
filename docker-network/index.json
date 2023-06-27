@@ -1,6 +1,6 @@
 {
-    "title": "Basic docker network",
-    "description": "Learn why we need network",
+    "title": "Basic Docker Network",
+    "description": "Learn why we need network to know docker network",
     "details": {
         "intro": {
             "text": "intro.md",

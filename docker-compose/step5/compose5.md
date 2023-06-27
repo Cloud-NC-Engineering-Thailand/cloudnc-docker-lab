@@ -240,7 +240,7 @@ services:
       - REDIS_PASS_FILE=/run/secrets/password
     command: >
       sh -c "redis-server /redis.conf 
-      --requirepass $$(cat $$REDIS_PASS_FILE)"
+      --requirepass \$\$(cat \$\$REDIS_PASS_FILE)"
 
     ports:
       - 6379:6379

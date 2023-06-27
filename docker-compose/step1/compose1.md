@@ -8,7 +8,7 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 
 # Tasks to be done
 
-1. Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank"> into `redis.conf`
+1. Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank">link</a> into `redis.conf`
 
 2. Click Execute this block of command this will create a simple nodejs server that connect to the redis database
 

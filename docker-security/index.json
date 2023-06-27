@@ -1,6 +1,6 @@
 {
-    "title": "Basic security with docker",
-    "description": "Learn environment variable and non-root user",
+    "title": "Basic Docker Security",
+    "description": "Learn how to scan image, use environment variable and add non-root user",
     "details": {
         "intro": {
             "text": "intro.md",

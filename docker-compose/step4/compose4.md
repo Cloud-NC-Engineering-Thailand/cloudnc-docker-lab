@@ -26,7 +26,7 @@ environment:
     - REDIS_PASS_FILE=/run/secrets/(file name)
 command: >
     sh -c "redis-server /redis.conf 
-    --requirepass $$(cat $$REDIS_PASS_FILE)"
+    --requirepass \$\$(cat \$\$REDIS_PASS_FILE)"
 ```
        
 
