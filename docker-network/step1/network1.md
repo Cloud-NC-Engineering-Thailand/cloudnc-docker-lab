@@ -1,18 +1,18 @@
 # What you'll learn on this lab
 
-1. Learn how to connect a container with a network
+1.Learn how to connect a container with a network
 
 # Tasks to be done
 
-1. Create a docker network name `test-network`
+1.Create a docker network name `test-network`
 
-2. Run `docker pull hello-world`
+2.Run `docker pull hello-world`
 
-3. Create container name `hello-container` and use the image  `hello-world`
+3.Create container name `hello-container` and use the image  `hello-world`
 
-4. Connect `hello-container` with the `test-network`
+4.Connect `hello-container` with the `test-network`
 
-5. Check that the network is exist or not all the cli command you can find in the hint section
+5.Check that the network is exist or not all the cli command you can find in the hint section
 
 <details>
 <summary>Hint</summary>

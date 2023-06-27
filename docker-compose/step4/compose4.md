@@ -1,14 +1,14 @@
 # What you'll learn on this lab
 
-1. You will learn how to use docker secret to manage the sensitive data and make your docker image more secure
+1.You will learn how to use docker secret to manage the sensitive data and make your docker image more secure
 
-2. In this case you will learn how to use a docker secret to make a redis database need to be authentication before the command execute
+2.In this case you will learn how to use a docker secret to make a redis database need to be authentication before the command execute
 
 # Tasks to be done
 
-1. Create a file name `password.txt` content of the file must be `redis-password` (it's up to you but in this case I want it to be simple and easy to remember, make sure that when you submit the content in the file is `redis-password`)
+1.Create a file name `password.txt` content of the file must be `redis-password` (it's up to you but in this case I want it to be simple and easy to remember, make sure that when you submit the content in the file is `redis-password`)
 
-2. Update the `docker-compose.yml` add ths line of code above the networks
+2.Update the `docker-compose.yml` add ths line of code above the networks
   ```plain
   secrets:
     (Your secret name):
@@ -18,7 +18,7 @@
     (network name):
   ```
 
-3. Edit `docker-compose.yml` and add this line of code into `redis-container` image, to running multiple command in `docker-compose.yml` you need to write this syntax that given below
+3.Edit `docker-compose.yml` and add this line of code into `redis-container` image, to running multiple command in `docker-compose.yml` you need to write this syntax that given below
   ```plain
   secrets:
       - (Your secret name)
@@ -30,11 +30,11 @@
   ```
        
 
-4. After you have done task 1-3 stop and `remove all` the container that is running and `start a new container` you will recieve some error in nodejs server but that fine we will fix that in the next lab
+4.After you have done task 1-3 stop and `remove all` the container that is running and `start a new container` you will recieve some error in nodejs server but that fine we will fix that in the next lab
 
-5. Open a new terminal and access to the redis container and type `redis-cli` after that type `ping` the response should be `pong` but in this case we tell the redis that only the user that is already authenticate can only run cli command in the terminal
+5.Open a new terminal and access to the redis container and type `redis-cli` after that type `ping` the response should be `pong` but in this case we tell the redis that only the user that is already authenticate can only run cli command in the terminal
 
-6. You need to use `AUTH (password)` in redis terminal first before running any cli command and if your password is correct now if you type ping and hit enter you will receive pong that mean you are ready to go.
+6.You need to use `AUTH (password)` in redis terminal first before running any cli command and if your password is correct now if you type ping and hit enter you will receive pong that mean you are ready to go.
 
 <details>
 <summary>Hint</summary>

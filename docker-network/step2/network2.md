@@ -1,36 +1,36 @@
 # What you'll learn on this lab
 
-1. Understand why a network is necessary for containers
+1.Understand why a network is necessary for containers
 
 # Tasks to be done
 
-1. Create two Docker networks named `net1` and `net2`
+1.Create two Docker networks named `net1` and `net2`
 
-2. Create Dockerfile and the content in Dockerfile must be
+2.Create Dockerfile and the content in Dockerfile must be
 `FROM ubuntu:rolling`
 `RUN apt-get update && apt-get install -y iputils-ping`  
 `ENTRYPOINT ["/bin/bash"]` 
 
-3. Build an image named `ubuntu-image`
+3.Build an image named `ubuntu-image`
 
-4. Create 3 docker container using `ubuntu:rolling` image and connect it to the network by following this rule
+4.Create 3 docker container using `ubuntu:rolling` image and connect it to the network by following this rule
         `ubuntu1` -> connect to `net1` -> start on port `3001:3001`
         `ubuntu2` -> connect to `net2` -> start on port `3002:3002`
         `ubuntu2.1` -> connect to `net2` -> start on port `3003:3003`
 
-4. Check that all of the container is exist and running by using docker cli command
+4.Check that all of the container is exist and running by using docker cli command
 
-5. Use docker cli command and inspect the network of the container name `ubuntu2.1` and copy the IP address (a command for inspecting the IP address is already prepared)
+5.Use docker cli command and inspect the network of the container name `ubuntu2.1` and copy the IP address (a command for inspecting the IP address is already prepared)
 
-6. Use docker cli command to access into terminal in ubuntu container name `ubuntu2`
+6.Use docker cli command to access into terminal in ubuntu container name `ubuntu2`
 
-7. Run `ping (IP address of ubuntu2.1)` and observe the response. After you satisfied, stop the ping action (to stop press ctrl+c or command+c)
+7.Run `ping (IP address of ubuntu2.1)` and observe the response. After you satisfied, stop the ping action (to stop press ctrl+c or command+c)
 
-8. Open a new terminal and inspect the network of the container name `ubuntu1` and copy the IP address of ubuntu1
+8.Open a new terminal and inspect the network of the container name `ubuntu1` and copy the IP address of ubuntu1
 
-9. Run `ping (IP address of ubuntu1)`  and observe, you will receive only one response. After that, you will not receive any more responses because they are on `different networks`
+9.Run `ping (IP address of ubuntu1)`  and observe, you will receive only one response. After that, you will not receive any more responses because they are on `different networks`
 
-10. Exit the `ubuntu2.1` container by typing `exit` and press enter
+10.Exit the `ubuntu2.1` container by typing `exit` and press enter
 
 <details>
 <summary>Hint</summary>

@@ -2,7 +2,7 @@
 
 In redis server if you remember, redis server need to be authenticate first but in our nodejs server I didn't provide the password so to fix the error we need to modify index.js to provide the password to redis
 
-1. Click this execute command
+1.Click this execute command
 
 ```plain
 
@@ -74,11 +74,11 @@ EOF
 
 ```{{exec}}
 
-2. Stop and remove all the container that is running and also remove the image of nodeserver because we have modify some code so we need to rebuild the image so the code in the image will be update
+2.Stop and remove all the container that is running and also remove the image of nodeserver because we have modify some code so we need to rebuild the image so the code in the image will be update
 
-3. Rebuild an image, build and start a container
+3.Rebuild an image, build and start a container
 
-4. Let try to grab some data that we have save in redis
+4.Let try to grab some data that we have save in redis
 
 ```plain
 

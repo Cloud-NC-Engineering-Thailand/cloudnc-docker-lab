@@ -1,14 +1,14 @@
 # What you'll learn on this lab
 
-1. Learn how to use add a `non-root user` to secure docker image
+1.Learn how to use add a `non-root user` to secure docker image
 
 # Tasks to be done
 
-1. `Remove` the previous docker image and docker container
+1.`Remove` the previous docker image and docker container
 
-2. Update `Dockerfile` and add a user with id=3333 and username=foo
+2.Update `Dockerfile` and add a user with id=3333 and username=foo
 
-3. `Rebuild` the docker image and container with the same cli command, docker image name must me `hello-node-env` , docker container name must be `node-container-env`
+3.`Rebuild` the docker image and container with the same cli command, docker image name must me `hello-node-env` , docker container name must be `node-container-env`
 
 <details>
 <summary>Hint</summary>

@@ -1,20 +1,20 @@
 # What you'll learn on this lab
 
-1. Learn how to use an `environment variable` in Dockerfile and make the app can use that environment variable
+1.Learn how to use an `environment variable` in Dockerfile and make the app can use that environment variable
 
 # Tasks to be done
 
-1. Update an `index.js` file at root directory
+1.Update an `index.js` file at root directory
 
-2. Inside the `index.js` file content must be `console.log("Server start at port with environment variable " + process.env.NODEJSPORT)`
+2.Inside the `index.js` file content must be `console.log("Server start at port with environment variable " + process.env.NODEJSPORT)`
 
-3. Update Dockerfile set the `NODE_ENV` to `production` by writing this in Dockerfile `ENV NODE_ENV production` this will let the node know that we want the environment to be on production mode
+3.Update Dockerfile set the `NODE_ENV` to `production` by writing this in Dockerfile `ENV NODE_ENV production` this will let the node know that we want the environment to be on production mode
 
-4. Declare the `environment variable` in `Dockerfile` name `NODEJSPORT` and change the `EXPOSE 8080` to `EXPORT ${NODEJSPORT}` all of the syntax you can find in the hint section
+4.Declare the `environment variable` in `Dockerfile` name `NODEJSPORT` and change the `EXPOSE 8080` to `EXPORT ${NODEJSPORT}` all of the syntax you can find in the hint section
 
-5. Build docker image name `hello-node-env` and give a environment variable value in cli name `NODEJSPORT` to be `5000`
+5.Build docker image name `hello-node-env` and give a environment variable value in cli name `NODEJSPORT` to be `5000`
 
-6. Build a docker container name `node-container-env`
+6.Build a docker container name `node-container-env`
 
 <details>
 <summary>Hint</summary>

@@ -1,19 +1,19 @@
 # What you'll learn on this lab
 
-1. How to scan docker image vulnerability and severity
+1.How to scan docker image vulnerability and severity
 
-2. Use trivy to for security, issue, and targets where it can find those issue, in this scenario we will compare between `alpine` and `slim`
+2.Use trivy to for security, issue, and targets where it can find those issue, in this scenario we will compare between `alpine` and `slim`
 
-3. Why most of the time we must use `alpine` tag instead of other
+3.Why most of the time we must use `alpine` tag instead of other
 
 
 # Tasks to be done
 
-1. Install trivy using docker by running this following command `docker run aquasec/trivy` 
+1.Install trivy using docker by running this following command `docker run aquasec/trivy` 
 
-2. Pull the docker image of `node:alpine` and `node:slim` by using `docker pull (image:tag)`
+2.Pull the docker image of `node:alpine` and `node:slim` by using `docker pull (image:tag)`
 
-3. Use trivy to check for the vulnerability, issue and severity for docker image by running this command `docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image (imagename):(tag)` (Note: tag is up to you if you have the same image name you must specify a tag and this process will take you for a moment don't panic)
+3.Use trivy to check for the vulnerability, issue and severity for docker image by running this command `docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy image (imagename):(tag)` (Note: tag is up to you if you have the same image name you must specify a tag and this process will take you for a moment don't panic)
 
 
 # Result 

@@ -1,26 +1,26 @@
 # What you'll learn on this lab
 
-1. Learn how to pull a `node` from `dockerhub`, make a `work directory` in a docker environment and learn how to `expose the port` that image will be listening on.
+1.Learn how to pull a `node` from `dockerhub`, make a `work directory` in a docker environment and learn how to `expose the port` that image will be listening on.
 
 # Tasks to be done
 
-1. Create an `index.js` file at root directory
+1.Create an `index.js` file at root directory
 
-2. Inside the `index.js` file content must be `console.log("Sever export port is 8080")`
+2.Inside the `index.js` file content must be `console.log("Sever export port is 8080")`
 
-3. Create a `Dockerfile` and `pull node:alpine`
+3.Create a `Dockerfile` and `pull node:alpine`
 
-4. Set a `work directory` to be `/app`
+4.Set a `work directory` to be `/app`
 
-5. `Copy everything` to the work directory
+5.`Copy everything` to the work directory
 
-6. Expose docker image port to be `8080`
+6.Expose docker image port to be `8080`
 
-7. Run command `node index.js`
+7.Run command `node index.js`
 
-8. Build docker image name `hello-node`
+8.Build docker image name `hello-node`
 
-9. Build a docker container name `node-container`
+9.Build a docker container name `node-container`
 
 <details>
 <summary>Hint</summary>

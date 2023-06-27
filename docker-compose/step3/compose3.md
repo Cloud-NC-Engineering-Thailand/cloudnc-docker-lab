@@ -1,12 +1,12 @@
 # What you'll learn on this lab
 
-1. You will learn how to use volumes with Docker Compose to store data persistently, even when the container is down
+1.You will learn how to use volumes with Docker Compose to store data persistently, even when the container is down
 
 # Tasks to be done
 
 (we need to add new config to our redis database if anybody didn't create redis.conf yet, follow this step; Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank">link</a> into `redis.conf`)
 
-1. You need to edit `docker-compose.yml` add this line of code to `redis-container`
+1.You need to edit `docker-compose.yml` add this line of code to `redis-container`
 
 ```plain
 

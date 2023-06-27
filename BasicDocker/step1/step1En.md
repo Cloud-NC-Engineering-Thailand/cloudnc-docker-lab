@@ -1,18 +1,18 @@
 # What you'll learn on this lab
 
-1. How to create an `Image` from a `Dockerfile` and run it in a `Docker container`.
+1.How to create an `Image` from a `Dockerfile` and run it in a `Docker container`.
 
 
 # Tasks to be done
 
-1. Run the following command on bash to receive responses from Google. Press ctrl+c or command+c to stop and proceed to the next command:
+1.Run the following command on bash to receive responses from Google. Press ctrl+c or command+c to stop and proceed to the next command:
 (ping is a command used to test the internet status of a computer or destination server).
 
 
-2. Create a `Dockerfile` in the `root` directory 
+2.Create a `Dockerfile` in the `root` directory 
 
-3. Build `Image` named `my-ping` that can execute `ping google.com` when we start the image
-4. Build `container` named `ping-container` from `Image` named `my-ping`
+3.Build `Image` named `my-ping` that can execute `ping google.com` when we start the image
+4.Build `container` named `ping-container` from `Image` named `my-ping`
 
 <details>
 <summary>Hint</summary>
