@@ -7,16 +7,16 @@
 1.Create two Docker networks named `net1` and `net2`
 
 2.Create Dockerfile and the content in Dockerfile must be
-`FROM ubuntu:rolling`
-`RUN apt-get update && apt-get install -y iputils-ping`  
-`ENTRYPOINT ["/bin/bash"]` 
+- `FROM ubuntu:rolling`
+- `RUN apt-get update && apt-get install -y iputils-ping`  
+- `ENTRYPOINT ["/bin/bash"]` 
 
 3.Build an image named `ubuntu-image`
 
 4.Create 3 docker container using `ubuntu:rolling` image and connect it to the network by following this rule
-        `ubuntu1` -> connect to `net1` -> start on port `3001:3001`
-        `ubuntu2` -> connect to `net2` -> start on port `3002:3002`
-        `ubuntu2.1` -> connect to `net2` -> start on port `3003:3003`
+- `ubuntu1` -> connect to `net1` -> start on port `3001:3001`
+- `ubuntu2` -> connect to `net2` -> start on port `3002:3002`
+- `ubuntu2.1` -> connect to `net2` -> start on port `3003:3003`
 
 4.Check that all of the container is exist and running by using docker cli command
 
