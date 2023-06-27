@@ -99,7 +99,7 @@ We will build a Node.js server that connects to a Redis database. You will be pr
   }
   EOF
 
-  ```{{execute}}
+  ```{{exec}}
 
 3.Install Docker compose
   ```plain
@@ -110,38 +110,38 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 
   docker-compose --version
 
-  ```{{execute}}
+  ```{{exec}}
 
 
 4.Create a `Dockerfile` and the content must be following by this 
-    - Pull `node:alpine`
-    - Set work directory to be at `/app`
-    - Copy only the `package.json` to de
-    - RUN `npm install` in work directory `/app`
-    - Copy everythings to work directory `/app`
-    - `Expose` port to be `8080`
-    - Execute the command `node index.js`
+  Pull `node:alpine`
+  Set work directory to be at `/app`
+  Copy only the `package.json` to de
+  RUN `npm install` in work directory `/app`
+  Copy everythings to work directory `/app`
+  `Expose` port to be `8080`
+  Execute the command `node index.js`
 
-5. Create a `docker-compose.yml`
+5.Create a `docker-compose.yml`
 
-6. Inside `docker-compose.yml` use `version 3.9`
+6.Inside `docker-compose.yml` use `version 3.9`
 
-7. Create 2 services `node-container` and `redis-container` and container name should be `node-container` and `redis-container`
+7.Create 2 services `node-container` and `redis-container` and container name should be `node-container` and `redis-container`
 
 
-8. For service `redis-container` 
+8.For service `redis-container` 
     - Use image name `redis:latest`
     - Start on port `6379:6379`
     - Connect to network name `backend`
 
-9. For service `node-container` 
+9.For service `node-container` 
     - Use image name `nodeserver`
     - Give a build context and path to Dockerfile
     - Start on port `8000:8000`
     - Make it start depends on `redis-container`
     - Connect to network name `backend`
 
-10. Run docker cli command to build and start the container
+10.Run docker cli command to build and start the container
 
 <details>
 <summary>Hint</summary>
