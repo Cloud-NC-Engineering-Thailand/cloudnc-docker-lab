@@ -99,8 +99,7 @@ We will build a Node.js server that connects to a Redis database. You will be pr
   }
   EOF
 
-  ```
-  {{execute}}
+  ```{{execute}}
 
 3. Install Docker compose
   ```plain
@@ -111,8 +110,7 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 
   docker-compose --version
 
-  ```
-  {{execute}}
+  ```{{execute}}
 
 
 4. Create a `Dockerfile` and the content must be following by this 
