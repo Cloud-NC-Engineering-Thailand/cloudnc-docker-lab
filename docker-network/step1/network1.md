@@ -37,6 +37,7 @@ All neccessary command in this lab
 Docker cli command
 
 ```plain
+docker pull hello-world
 docker run --name hello-container hello-world
 docker network create test-network
 docker network connect test-network hello-container

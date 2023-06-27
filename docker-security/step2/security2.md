@@ -8,13 +8,13 @@
 
 2. Inside the `index.js` file content must be `console.log("Server start at port with environment variable " + process.env.NODEJSPORT)`
 
-3. Update Dockerfile sest the NODE_ENV to production by writing this in Dockerfile `ENV NODE_ENV production` this will let the node know that we want the environment to be on production mode
+3. Update Dockerfile sest the `NODE_ENV` to `production` by writing this in Dockerfile `ENV NODE_ENV production` this will let the node know that we want the environment to be on production mode
 
 4. Declare the `environment variable` in `Dockerfile` name `NODEJSPORT` and change the `EXPOSE 8080` to `EXPORT ${NODEJSPORT}` all of the syntax you can find in the hint section
 
-3. Build docker image name `hello-node-env` and give a environment variable value in cli name NODEJSPORT to be 5000
+5. Build docker image name `hello-node-env` and give a environment variable value in cli name `NODEJSPORT` to be `5000`
 
-4. Build a docker container name `node-container-env`
+6. Build a docker container name `node-container-env`
 
 <details>
 <summary>Hint</summary>
@@ -37,9 +37,15 @@ All neccessary Dockerfile syntax
 5. `CMD ["(command line)"]` - Defines the default command to run when the container starts
 6. `ENV NODE_ENV production` - Use to tell the node that our environment variable will be on production mode
 7. 
-`ARG NODEJSPORT`
-`ENV NODEJSPORT $NODEJSPORT`
+
+```plain
+
+ARG NODEJSPORT
+ENV NODEJSPORT $NODEJSPORT
+
+```
 ARG (env name) - Use for recieving the value of the environment variable on the cli command
+
 ENV (env name) (env value) - Use to set the environment variable name and value in the container
 </details>
 
