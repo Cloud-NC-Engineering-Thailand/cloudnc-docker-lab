@@ -44,8 +44,8 @@ All neccessary command in this lab
 5. `docker network connect (network name) (container name)` - Use to connect the network with a docker container
 6. `docker container inspect (container id or container name)` - Use to inspect the container network
 7. `docker container inspect --format '{{ .NetworkSettings.Networks.(Your network name).IPAddress }}' (container id or container name)` - Use to inspect IP address of the container network
-8. `docker image ls` - Use to call all the image that exist on machine
-9. `docker container ps -a` - Use to list all exist container
+8. `docker image ls` - Use to list all the image that exist on your current machine
+9. `docker container ps -a` - Use to list all exist container on your current machine
 
 </details>
 

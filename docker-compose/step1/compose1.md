@@ -4,14 +4,13 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 
 # What you'll learn on this lab
 
-1. Learn how to use docker compose to define multi-container at the same time
+1. Learn how to use docker compose to define multi-containers at the same time
 
 # Tasks to be done
 
+1.Create a folder named `config` and inside folder config, make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank">link</a> into `redis.conf`
 
-1.Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank">link</a> into `redis.conf`
-
-2.Click Execute this block of command this will create a simple nodejs server that connect to the redis database
+2.Click this block, this will create a simple nodejs server that connects to the redis database
 
 
   ```plain
@@ -96,12 +95,13 @@ We will build a Node.js server that connects to a Redis database. You will be pr
       "express": "^4.18.2",
       "redis": "^4.6.7"
     }
-  }
+  } 
   EOF
 
   ```{{exec}}
 
 3.Install Docker compose
+
   ```plain
 
   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -113,12 +113,13 @@ We will build a Node.js server that connects to a Redis database. You will be pr
   ```{{exec}}
 
 
-4.Create a `Dockerfile` and the content must be following by this 
+4.Create a `Dockerfile` and the content must be following by this
+
   - Pull `node:alpine`
   - Set work directory to be at `/app`
-  - Copy only the `package.json` to de
-  - RUN `npm install` in work directory `/app`
-  - Copy everythings to work directory `/app`
+  - Copy only the `package.json` to the directory
+  - RUN `npm install` in `/app`
+  - Copy everythings to `/app`
   - `Expose` port to be `8080`
   - Execute the command `node index.js`
 
@@ -141,7 +142,7 @@ We will build a Node.js server that connects to a Redis database. You will be pr
   - Make it start depends on `redis-container`
   - Connect to network name `backend`
 
-10.Run docker cli command to build and start the container
+10.Run docker commands to build and start the containers
 
 <details>
 <summary>Hint</summary>
@@ -153,8 +154,8 @@ All neccessary command in this lab
 4. `docker-compose build` - Use to build Docker images for services defined in a docker-compose.yml
 5. `docker-compose up` - Use to build all the services into container
 6. `docker-compose down` - Use to remove all the container in the services
-7. `docker image ls` - Use to call all the image that exist on machine
-8. `docker container ps -a` - Use to list all exist container
+7. `docker image ls` - Use to list all the image that exist on your current machine
+8. `docker container ps -a` - Use to list all exist container on your current machine on your current machine
 9. `docker image rm (image name)` - Use to delete a docker image with a specifig name
 10. `docker container rm (container name)` - Use to delete a docker container with a specifig container
 

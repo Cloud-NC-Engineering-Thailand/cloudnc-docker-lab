@@ -25,9 +25,9 @@ All neccessary command in this lab
 4. `docker network create (network name)` - Use to create a network in docker
 5. `docker network connect (network name) (container name)` - Use to connect the network with a docker container
 6. `docker container inspect (containerid)` - Use to inspect the container network
-7. `docker image ls` - Use to call all the image that exist on machine
-8. `docker container ps -a` - Use to list all exist container
-9. `docker run --name (container name) (image name)` - Use to create a container from image
+7. `docker image ls` - Use to list all the image that exist on your current machine
+8. `docker container ps -a` - Use to list all exist container on your current machine
+9. `docker run --name (container name) (image name)` - Use to launch a container from the specified image
 
 </details>
 

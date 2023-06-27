@@ -1,6 +1,6 @@
 # What you'll learn on this lab
 
-1.Learn How to create a `Tag Docker Image` in order to select the desired `Image` for `pushing` to Dockerhub or other containers. In this case, we will push it to our own machine. Additionally, everyone is required to add a `Tag Version` to the `Image`.
+1.Learn How to create a `Tag for your Docker Image` in order to select the desired `Image` for `pushing` to Dockerhub or other containers registries. In this case, we will push it to our own local registry on the current machine. Additionally, everyone is required to add a `Tag Version` to the `Image` for version control
 
 # Tasks to be done
 
@@ -15,12 +15,12 @@
 
 All neccessary command in this lab
 
-1. `docker tag (image name) (tag name):(tag version)` - Use to build a docker image
-2. `docker image ls` - Use to call all the image that exist on machine
-3. `docker push (tag name)` - Use to push a tag image to Dockerhub or other containers
+1. `docker tag (image name) (tag name):(tag version)` - Use to tag a Docker image
+2. `docker image ls` - Use to list all image that exist on the current machine
+3. `docker push (tag name)` - Use to push a tagged image to Dockerhub or other containers registries
 
 All neccessary Dockerfile syntax
-1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image
+1. `FROM (docker image name):(tag)` -  Specifies the base image for your Docker image
 2. `CMD ["(command line)"]` - Defines the default command to run when the container starts
 
 </details>
