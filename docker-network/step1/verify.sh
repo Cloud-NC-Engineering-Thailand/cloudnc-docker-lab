@@ -4,7 +4,7 @@ set -e # exit once any command fails
 {
     date
 
-    docker image ls | grep hello-node
+    docker image ls | grep hello-world
     
     docker ps -a | grep hello-container
 
