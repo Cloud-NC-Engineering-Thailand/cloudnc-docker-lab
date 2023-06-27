@@ -10,10 +10,10 @@ We will build a Node.js server that connects to a Redis database. You will be pr
 
 <ol>
 <li>
-1. Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank">link</a> into `redis.conf`
+Create a folder name `config` and inside folder config make a file name `redis.conf` copy the config from this repository <a href="https://github.com/chitsanuponjate/redis-config/blob/main/redis.conf"  rel="noreferrer" target="_blank">link</a> into `redis.conf`
 </li>
 <li>
-2. Click Execute this block of command this will create a simple nodejs server that connect to the redis database
+Click Execute this block of command this will create a simple nodejs server that connect to the redis database
 
 
   ```plain
@@ -104,7 +104,9 @@ We will build a Node.js server that connects to a Redis database. You will be pr
   ```{{execute}}
 </li>
 <li>
-3. Install Docker compose
+Install Docker compose
+
+
   ```plain
 
   sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -114,9 +116,10 @@ We will build a Node.js server that connects to a Redis database. You will be pr
   docker-compose --version
 
   ```{{execute}}
+
 </li>
 <li>
-4. Create a `Dockerfile` and the content must be following by this 
+Create a `Dockerfile` and the content must be following by this 
     - Pull `node:alpine`
     - Set work directory to be at `/app`
     - Copy only the `package.json` to de
@@ -126,31 +129,32 @@ We will build a Node.js server that connects to a Redis database. You will be pr
     - Execute the command `node index.js`
 </li>
 <li>
-5. Create a `docker-compose.yml`
+Create a `docker-compose.yml`
 </li>
 <li>
-6. Inside `docker-compose.yml` use `version 3.9`
+Inside `docker-compose.yml` use `version 3.9`
 </li>
 <li>
-7. Create 2 services `node-container` and `redis-container` and container name should be `node-container` and `redis-container`
+Create 2 services `node-container` and `redis-container` and container name should be `node-container` and `redis-container`
 </li>
 
 <li>
-8. For service `redis-container` 
+For service `redis-container` 
     - Use image name `redis:latest`
     - Start on port `6379:6379`
     - Connect to network name `backend`
 </li>
 
 <li>
-9. For service `node-container` 
+For service `node-container` 
     - Use image name `nodeserver`
     - Give a build context and path to Dockerfile
     - Start on port `8000:8000`
     - Make it start depends on `redis-container`
     - Connect to network name `backend`
 </li>
-<li>10. Run docker cli command to build and start the container</li>
+
+<li>Run docker cli command to build and start the container</li>
 
 </ol>	
 
