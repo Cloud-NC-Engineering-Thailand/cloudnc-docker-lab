@@ -29,10 +29,10 @@ All neccessary command in this lab
 1. `touch (filename)` - Use to create a file
 2. `nano (filename)` - Use to edit a file
 3. `docker build -t (image name) .` - Use to build a docker image
-4. `docker image ls` - Use to list all the image that exist on your current machine
+4. `docker image ls` - Use to list all images that exist on your current machine
 5. `docker container ps -a` - Use to list all exist container on your current machine
-6. `docker image rm (image name)` - Use to delete a docker image with a specifig name
-7. `docker container rm (container name)` - Use to delete a docker container with a specifig container
+6. `docker image rm (image name)` - Use to delete a docker image with a specified name
+7. `docker container rm (container name)` - Use to delete a docker container with a specified container
 
 All neccessary Dockerfile syntax
 1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
@@ -46,7 +46,7 @@ All neccessary Dockerfile syntax
 <details>
 <summary>Solution</summary>
 
-Create all file 
+Create all files 
 
 ```plain
 

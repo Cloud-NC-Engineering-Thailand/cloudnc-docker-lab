@@ -152,18 +152,18 @@ All neccessary command in this lab
 2. `touch (filename)` - Use to create a file
 3. `nano (filename)` - Use to edit a file
 4. `docker-compose build` - Use to build Docker images for services defined in a docker-compose.yml
-5. `docker-compose up` - Use to build all the services into container
-6. `docker-compose down` - Use to remove all the container in the services
-7. `docker image ls` - Use to list all the image that exist on your current machine
-8. `docker container ps -a` - Use to list all exist container on your current machine on your current machine
-9. `docker image rm (image name)` - Use to delete a docker image with a specifig name
-10. `docker container rm (container name)` - Use to delete a docker container with a specifig container
+5. `docker-compose up` - Use to launch all the services into containers
+6. `docker-compose down` - Use to remove all the containers in the services
+7. `docker image ls` - Use to list all images that exist on your current machine
+8. `docker container ps -a` - Use to list all exist container on your current machine
+9. `docker image rm (image name)` - Use to delete a Docker image with a specified name
+10. `docker container rm (container name)` - Use to delete a Docker container with a specified name
 
 All neccessary Dockerfile syntax
-1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image
+1. `FROM (docker image name):(tag)` -  Specifies the base image for your Docker image
 2. `WORKDIR (/path/to/workdir)` - Sets the folder inside the container where commands will be executed
 3. `COPY (path of file or folder that you want to copy) (destination of the file or folder) ` - Moves files or folders from your computer to the container
-4. `RUN` - Used to execute commands during the image build process. It allows you to run any command that you would typically run on a command line inside the container
+4. `RUN` - Use to execute commands during the image build process. It allows you to run any commands that you would typically run on a command line inside the container
 4. `EXPOSE (number of port that the image will be running on)` - Declares the port on which the container will listen for incoming connections
 5. `CMD ["(command line)"]` - Defines the default command to run when the container starts
 
@@ -179,9 +179,9 @@ services:
       context: (path of the folder to be build)
       dockerfile: (path to Dockerfile)
     ports:
-      - (port number):(port number)
+      - (external port number):(container port number)
     depends_on:
-      - (if this container name is start this container will start after)
+      - (if this container name is start, this container will start after)
     networks:
       - (network name)
   
@@ -195,7 +195,7 @@ networks:
 <details>
 <summary>Solution</summary>
 
-Create all file 
+Create all files 
 
 ```plain
 

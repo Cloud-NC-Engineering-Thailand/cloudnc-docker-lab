@@ -22,7 +22,7 @@ All neccessary command in this lab
 1. `touch (filename)` - Use to create a file
 2. `nano (filename)` - Use to edit a file
 3. `docker build -t (image name) .` - Use to build a docker image
-4. `docker image ls` - Use to list all the image that exist on your current machine
+4. `docker image ls` - Use to list all images that exist on your current machine
 5. `docker run --name (container name) (image name)` - Use to launch a container from the specified image
 
 

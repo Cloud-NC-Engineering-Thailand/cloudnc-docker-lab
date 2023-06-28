@@ -44,7 +44,7 @@ services:
       context: (path of the folder to be build)
       dockerfile: (path to Dockerfile)
     ports:
-      - (port number):(port number)
+      - (external port number):(container port number)
     depends_on:
       - (if this container name is start this container will start after)
     networks:
