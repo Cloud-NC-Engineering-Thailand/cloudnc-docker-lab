@@ -1,4 +1,4 @@
-# Why Error occur
+# Why Error occured
 
 In redis server if you remember, redis server need to be authenticate first but in our nodejs server I didn't provide the password so to fix the error we need to modify index.js to provide the password to redis
 
@@ -100,7 +100,7 @@ All neccessary command in this lab
 4. `docker-compose up` - Use to build all the services into container
 5. `docker-compose down` - Use to remove all the container in the services
 4. `docker image ls` - Use to list all images that exist on your current machine
-5. `docker container ps -a` - Use to list all exist containers on your current machine
+5. `docker container ps -a` - Use to list all existing containers on your current machine
 6. `docker image rm (image name)` - Use to delete a docker image with a specified name
 7. `docker container rm (container name)` - Use to delete a docker container with a specified container
 8. `docker exec -it (container name or container id) bash` - Use to access the container to run cli command
