@@ -24,15 +24,15 @@ All neccessary command in this lab
 2. `nano (filename)` - Use to edit a file
 3. `docker build -t (image name) --build-arg (environment name)="(environment value)" .` - Use to build a docker image with an environment variable
 4. `docker image ls` - Use to list all images that exist on your current machine
-5. `docker container ps -a` - Use to list all exist container on your current machine
+5. `docker container ps -a` - Use to list all exist containers on your current machine
 6. `docker image rm (image name)` - Use to delete a docker image with a specified name
 7. `docker container rm (container name)` - Use to delete a docker container with a specified container
 
 
 All neccessary Dockerfile syntax
-1. `FROM (docker image name):(tag)` -  Specifies the starting point image for your Docker image.
-2. `WORKDIR (/path/to/workdir)` - Set the folder inside the container where commands will be executed.
-3. `COPY (path of file or folder that you want to copy) (destination of the file or folder) ` - Moves files or folders from your computer to the container.
+1. `FROM (docker image name):(tag)` -  Specifies the base image for your Docker image
+2. `WORKDIR (/path/to/workdir)` - Set the folder inside the container where commands will be executed
+3. `COPY (path of file or folder that you want to copy) (destination of the file or folder) ` - Moves files or folders from your computer to the container
 4. `EXPOSE (number of port that the image will be running on)` - Declares the port on which the container will listen for incoming connections.
 5. `CMD ["(command line)"]` - Defines the default command to run when the container starts
 6. `ENV NODE_ENV production` - Use to tell the node that our environment variable will be on production mode

@@ -8,7 +8,7 @@
 
 2.Run `docker pull hello-world`
 
-3.Create container name `hello-container` and use the image  `hello-world`
+3.Create container named `hello-container` and use the image  `hello-world`
 
 4.Connect `hello-container` with the `test-network`
 
@@ -26,7 +26,7 @@ All neccessary command in this lab
 5. `docker network connect (network name) (container name)` - Use to connect the network with a docker container
 6. `docker container inspect (containerid)` - Use to inspect the container network
 7. `docker image ls` - Use to list all images that exist on your current machine
-8. `docker container ps -a` - Use to list all exist container on your current machine
+8. `docker container ps -a` - Use to list all exist containers on your current machine
 9. `docker run --name (container name) (image name)` - Use to launch a container from the specified image
 
 </details>

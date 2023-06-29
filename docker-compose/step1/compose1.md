@@ -155,7 +155,7 @@ All neccessary command in this lab
 5. `docker-compose up` - Use to launch all the services into containers
 6. `docker-compose down` - Use to remove all the containers in the services
 7. `docker image ls` - Use to list all images that exist on your current machine
-8. `docker container ps -a` - Use to list all exist container on your current machine
+8. `docker container ps -a` - Use to list all exist containers on your current machine
 9. `docker image rm (image name)` - Use to delete a Docker image with a specified name
 10. `docker container rm (container name)` - Use to delete a Docker container with a specified name
 

@@ -43,10 +43,10 @@ All neccessary command in this lab
 1. `touch (filename)` - Use to create a file
 2. `nano (filename)` - Use to edit a file
 3. `docker-compose build` - Use to build Docker images for services defined in a docker-compose.yml
-4. `docker-compose up` - Use to build all the services into container
+4. `docker-compose up` - Use to launch all the services into containers
 5. `docker-compose down` - Use to remove all the container in the services
 4. `docker image ls` - Use to list all images that exist on your current machine
-5. `docker container ps -a` - Use to list all exist container on your current machine
+5. `docker container ps -a` - Use to list all exist containers on your current machine
 6. `docker image rm (image name)` - Use to delete a docker image with a specified name
 7. `docker container rm (container name)` - Use to delete a docker container with a specified container
 8. `docker exec -it (container name or container id) bash` - Use to access the container to run cli command
