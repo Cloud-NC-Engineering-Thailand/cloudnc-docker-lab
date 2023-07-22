@@ -40,7 +40,7 @@ All neccessary command in this lab
 1. `docker build -t (image name) .` - Use to create a network in docker
 2. `docker network create (network name)` - Use to create a network in docker
 3. `docker run -t -d -p (port):(port) --network (network name) --name (container name) (image name):(tag)` - Use to create a container using image and give a parameter of port and network that will be connected
-4. `docer exit -it (container name) bash` - Use to access to the ubuntu container so we can run some cli command inside the container
+4. `docker exec -it (container name) bash` - Use to access to the ubuntu container so we can run some cli command inside the container
 5. `docker network connect (network name) (container name)` - Use to connect the network with a docker container
 6. `docker container inspect (container id or container name)` - Use to inspect the container network
 7. `docker container inspect --format '{{ .NetworkSettings.Networks.(Your network name).IPAddress }}' (container id or container name)` - Use to inspect IP address of the container network
